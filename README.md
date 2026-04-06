@@ -14,3 +14,7 @@ src means **source code** and contains the main Python scripts used in the proje
 
 ## Replication
 I will add instructions as the project is built.
+
+## Provisional project question
+In this project I will examine some sort of finance related question using a Python analysis
+I will choose the Data set soon and start 
