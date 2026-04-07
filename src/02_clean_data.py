@@ -31,23 +31,24 @@ for csv_file in RAW_DIR.glob("*.csv"):
     # Read the raw data
     df = pd.read_csv(csv_file)
 
-    #look if it has a timestamp column and if it does not skip it
-    if "timestamp" not in df.columns or "close" not in df.columns:
-        print(f"Skipping {csv_file.name} because it does not have a timestamp or close column.")
+    #look if it has a Date column or Adj Close column and if it does not skip it
+    if "Date" not in df.columns or "Adj Close" not in df.columns:
+        print(f"Skipping {csv_file.name} because it does not have a Date or Adj Close column.")
         continue
 
     # only keep the columns we need
-    df = df[["timestamp", "close"]].copy()
+    # we only need the Date and Adj Close columns for our analysis, so we will drop the rest to save memory and make the data easier to work with.
+    df = df[["Date", "Adj Close"]].copy()
 
     # convert columns to the correct format
-    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
-    df["close"] = pd.to_numeric(df["close"], errors="coerce")
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    df["Adj Close"] = pd.to_numeric(df["Adj Close"], errors="coerce")
 
     # remove any rows with missing values 
     df = df.dropna()
 
-    #sort the data by timestamp in ascending order
-    df = df.sort_values("timestamp")
+    #sort the data by Date in ascending order
+    df = df.sort_values("Date")
 
     # add the ticker and sector name as new columns in the dataframe
     df["ticker"] = ticker
@@ -64,8 +65,8 @@ else:
     # combine all cleaned dataframes into one dataset
     combined_df = pd.concat(all_data, ignore_index=True)
 
-    # sort the final dataset by ticker and timestamp
-    combined_df = combined_df.sort_values(["ticker", "timestamp"]).reset_index(drop=True)
+    # sort the final dataset by ticker and Date
+    combined_df = combined_df.sort_values(["ticker", "Date"]).reset_index(drop=True)
 
     # save the cleaned dataset into the clean folder
     output_file = CLEAN_DIR / "sector_prices.csv"
