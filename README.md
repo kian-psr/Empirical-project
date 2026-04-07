@@ -1,8 +1,13 @@
 
 # Empirical-project
 
-## Project idea
-BEE2041 empirical project repository.
+## Provisional project question
+How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (\(\beta \)) to the overall market?
+
+
+## Project overview 
+In this project i will compare major equity sectors using daily market data and ETFs. It examines sector performance (return), volatility, correlation, and market sensitivity using Python analysis.
+
 
 ## Repository structure
 data/raw contains original data  
@@ -15,6 +20,3 @@ src means **source code** and contains the main Python scripts used in the proje
 ## Replication
 I will add instructions as the project is built.
 
-## Provisional project question
-In this project I will examine some sort of finance related question using a Python analysis
-I will choose the Data set soon and start 

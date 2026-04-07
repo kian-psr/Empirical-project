@@ -1,6 +1,28 @@
 ---
-Title: 'BEE2041 Empiricial Project'
+Title: 'How do equity sectors differ in returns, volatility, and sensitivity to the overall market?'
 Format: html
 ---
 
-I will add the final blog post here after I have completed the project. This will include a summary of my findings, the methods I used, and any conclusions I drew from the data. I will also include any relevant charts or graphs to illustrate my points. Wait for it!!!
+Word count: 1000-2500 words
+
+Structure:
+
+## Introduction
+
+Introduce the topic and the data used in the analysis. It compares major equity sectors using daily market data. The goal is to see how sectors differ in performance, volatility, and sensitivity to overall market movements. this is the base to my question: "How do equity sectors differ in returns, volatility, and sensitivity to the overall market?"
+
+## Data
+
+This section will describe the sector ETFs, the market benchmark, the sample period, and the cleaning process.
+I will use the following sectors:
+
+## Results
+
+This section will present figures and summary statistics and regression results that are made in python. 
+
+## Analysis
+This section will interpret the results and discuss the differences between sectors in terms of returns, volatility, and sensitivity to the overall market. I will also discuss any interesting patterns or trends that emerge from the data.
+
+## Conclusion
+
+This section will summarise the main findings and discuss the limits of the analysis.
