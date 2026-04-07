@@ -1,7 +1,8 @@
 from pathlib import Path
+import yfinance as yf
 import requests
 
-# Donwload the data from alphavantage API
+# Use yfinance to get the data for the sector ETFs. 
 # Tickers I will use: SPY, XLK, XLF, XLV, XLE, XLY, XLU, XLP, XLB,
 
 #-----------------------------------------
@@ -15,38 +16,33 @@ import requests
 # XLP = consumer staples
 # XLB = materials
 #-----------------------------------------
-
-# Insert your API key here which you can get for free on th website https://www.alphavantage.co/support/#api-key
-API_KEY = "YOUR_API_KEY_HERE"
-
-# you can change the function to get different data
-FUNCTION = "TIME_SERIES_DAILY"
-
-# These are the tickers for the sectors ETFs.
 TICKERS= ["SPY", "XLK", "XLF", "XLV", "XLE", "XLY", "XLU", "XLP", "XLB"]
 
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-BASE_URL = "https://www.alphavantage.co/query"
-
+# tickers = yf.download(TICKERS, start="2010-01-01", end="2024-01-01", group_by='ticker')
 for ticker in TICKERS:
-    params = {
-        "function": FUNCTION,
-        "symbol": ticker,
-        "outputsize": "compact",  # you can change to "full" if you have premium
-        "datatype": "csv",
-        "apikey": API_KEY,  
-    }
+    print(f"Downloading data for {ticker} from yfinance...")
 
-    print(f"Downloading data for {ticker} from Alpha Vantage...")
+    df= yf.download(
+        ticker, 
+        period="5y", # Download data for the last 5 years.
+        interval="1d",  # Daily data
+        auto_adjust=False, # Adjusted Close price, which accounts for corporate actions like dividends and stock splits.
+        actions=False, # Exclude dividends and stock splits from the data.
+        progress=False, # Disable the progress bar for cleaner output.
+        threads=False, # Disable multithreading to avoid potential issues with large downloads.
+        timeout=30, # Set a timeout for the download to prevent hanging.
+    )
+# skip if no data is found for the ticker
+    if df.empty:
+        print(f"No data found for {ticker}")
+        continue
 
-
-    response = requests.get(BASE_URL, params=params, timeout=30)
-    response.raise_for_status()
-
+# Save the data to a CSV file in the raw data directory.
     output_file = RAW_DIR / f"{ticker}.csv"
-    output_file.write_bytes(response.content)
+    df.to_csv(output_file)
 
     print(f"Saved {ticker} to {output_file}")
 
