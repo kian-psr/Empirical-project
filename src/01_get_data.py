@@ -17,7 +17,7 @@ import requests
 #-----------------------------------------
 
 # Insert your API key here which you can get for free on th website https://www.alphavantage.co/support/#api-key
-API_KEY = "PASTE_YOUR_KEY_HERE"
+API_KEY = "AZEFOCGEB3M96QBI"
 
 # you can change the function to get different data, for example TIME_SERIES_INTRADAY, TIME_SERIES_WEEKLY, TIME_SERIES_MONTHLY...
 FUNCTION = "TIME_SERIES_DAILY_ADJUSTED"
