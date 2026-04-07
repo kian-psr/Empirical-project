@@ -40,6 +40,13 @@ for ticker in TICKERS:
         print(f"No data found for {ticker}")
         continue
 
+# Flatten the columns as yfinance returns a MultiIndex
+    if hasattr(df.columns, "nlevels") and df.columns.nlevels > 1:
+        df.columns = df.columns.get_level_values(0)
+
+# Give the index a proper name so it saves as Date
+    df.index.name = "Date"
+
 # Save the data to a CSV file in the raw data directory.
     output_file = RAW_DIR / f"{ticker}.csv"
     df.to_csv(output_file)
