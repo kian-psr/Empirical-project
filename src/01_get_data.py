@@ -1,6 +1,5 @@
 from pathlib import Path
 import yfinance as yf
-import requests
 
 # Use yfinance to get the data for the sector ETFs. 
 # Tickers I will use: SPY, XLK, XLF, XLV, XLE, XLY, XLU, XLP, XLB,
