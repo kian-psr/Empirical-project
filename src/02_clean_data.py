@@ -32,16 +32,15 @@ for csv_file in RAW_DIR.glob("*.csv"):
     df = pd.read_csv(csv_file)
 
     #look if it has a timestamp column and if it does not skip it
-    if "timestamp" not in df.columns:
-        print(f"Skipping {csv_file} because it does not have a timestamp column.")
+    if "timestamp" not in df.columns or "close" not in df.columns:
+        print(f"Skipping {csv_file.name} because it does not have a timestamp or close column.")
         continue
 
-    #only keep the column we need
-    #timestamp for date and close for daily price
+    # only keep the columns we need
     df = df[["timestamp", "close"]].copy()
 
-    # change the close column into a numeric format 
-    # if there are any non-numeric or missing values, they will be converted to NaN
+    # convert columns to the correct format
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
     df["close"] = pd.to_numeric(df["close"], errors="coerce")
 
     # remove any rows with missing values 
@@ -49,6 +48,13 @@ for csv_file in RAW_DIR.glob("*.csv"):
 
     #sort the data by timestamp in ascending order
     df = df.sort_values("timestamp")
+
+    # add the ticker and sector name as new columns in the dataframe
+    df["ticker"] = ticker
+    df["sector"] = sector_name
+
+    #store the cleaned dataframe in the list
+    all_data.append(df)
 
 # if no valid files were found, print a message
 if not all_data:

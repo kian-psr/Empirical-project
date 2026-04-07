@@ -1,0 +1,301 @@
+timestamp,close,ticker,sector
+2025-11-10,681.44,SPY,Overall Market
+2025-11-11,683.0,SPY,Overall Market
+2025-11-12,683.38,SPY,Overall Market
+2025-11-13,672.04,SPY,Overall Market
+2025-11-14,671.93,SPY,Overall Market
+2025-11-17,665.67,SPY,Overall Market
+2025-11-18,660.08,SPY,Overall Market
+2025-11-19,662.63,SPY,Overall Market
+2025-11-20,652.53,SPY,Overall Market
+2025-11-21,659.03,SPY,Overall Market
+2025-11-24,668.73,SPY,Overall Market
+2025-11-25,675.02,SPY,Overall Market
+2025-11-26,679.68,SPY,Overall Market
+2025-11-28,683.39,SPY,Overall Market
+2025-12-01,680.27,SPY,Overall Market
+2025-12-02,681.53,SPY,Overall Market
+2025-12-03,683.89,SPY,Overall Market
+2025-12-04,684.39,SPY,Overall Market
+2025-12-05,685.69,SPY,Overall Market
+2025-12-08,683.63,SPY,Overall Market
+2025-12-09,683.04,SPY,Overall Market
+2025-12-10,687.57,SPY,Overall Market
+2025-12-11,689.17,SPY,Overall Market
+2025-12-12,681.76,SPY,Overall Market
+2025-12-15,680.73,SPY,Overall Market
+2025-12-16,678.87,SPY,Overall Market
+2025-12-17,671.4,SPY,Overall Market
+2025-12-18,676.47,SPY,Overall Market
+2025-12-19,680.59,SPY,Overall Market
+2025-12-22,684.83,SPY,Overall Market
+2025-12-23,687.96,SPY,Overall Market
+2025-12-24,690.38,SPY,Overall Market
+2025-12-26,690.31,SPY,Overall Market
+2025-12-29,687.85,SPY,Overall Market
+2025-12-30,687.01,SPY,Overall Market
+2025-12-31,681.92,SPY,Overall Market
+2026-01-02,683.17,SPY,Overall Market
+2026-01-05,687.72,SPY,Overall Market
+2026-01-06,691.81,SPY,Overall Market
+2026-01-07,689.58,SPY,Overall Market
+2026-01-08,689.51,SPY,Overall Market
+2026-01-09,694.07,SPY,Overall Market
+2026-01-12,695.16,SPY,Overall Market
+2026-01-13,693.77,SPY,Overall Market
+2026-01-14,690.36,SPY,Overall Market
+2026-01-15,692.24,SPY,Overall Market
+2026-01-16,691.66,SPY,Overall Market
+2026-01-20,677.58,SPY,Overall Market
+2026-01-21,685.4,SPY,Overall Market
+2026-01-22,688.98,SPY,Overall Market
+2026-01-23,689.23,SPY,Overall Market
+2026-01-26,692.73,SPY,Overall Market
+2026-01-27,695.49,SPY,Overall Market
+2026-01-28,695.42,SPY,Overall Market
+2026-01-29,694.04,SPY,Overall Market
+2026-01-30,691.97,SPY,Overall Market
+2026-02-02,695.41,SPY,Overall Market
+2026-02-03,689.53,SPY,Overall Market
+2026-02-04,686.19,SPY,Overall Market
+2026-02-05,677.62,SPY,Overall Market
+2026-02-06,690.62,SPY,Overall Market
+2026-02-09,693.95,SPY,Overall Market
+2026-02-10,692.12,SPY,Overall Market
+2026-02-11,691.96,SPY,Overall Market
+2026-02-12,681.27,SPY,Overall Market
+2026-02-13,681.75,SPY,Overall Market
+2026-02-17,682.85,SPY,Overall Market
+2026-02-18,686.29,SPY,Overall Market
+2026-02-19,684.48,SPY,Overall Market
+2026-02-20,689.43,SPY,Overall Market
+2026-02-23,682.39,SPY,Overall Market
+2026-02-24,687.35,SPY,Overall Market
+2026-02-25,693.15,SPY,Overall Market
+2026-02-26,689.3,SPY,Overall Market
+2026-02-27,685.99,SPY,Overall Market
+2026-03-02,686.38,SPY,Overall Market
+2026-03-03,680.33,SPY,Overall Market
+2026-03-04,685.13,SPY,Overall Market
+2026-03-05,681.31,SPY,Overall Market
+2026-03-06,672.38,SPY,Overall Market
+2026-03-09,678.27,SPY,Overall Market
+2026-03-10,677.18,SPY,Overall Market
+2026-03-11,676.33,SPY,Overall Market
+2026-03-12,666.06,SPY,Overall Market
+2026-03-13,662.29,SPY,Overall Market
+2026-03-16,669.03,SPY,Overall Market
+2026-03-17,670.79,SPY,Overall Market
+2026-03-18,661.43,SPY,Overall Market
+2026-03-19,659.8,SPY,Overall Market
+2026-03-20,648.57,SPY,Overall Market
+2026-03-23,655.38,SPY,Overall Market
+2026-03-24,653.18,SPY,Overall Market
+2026-03-25,656.82,SPY,Overall Market
+2026-03-26,645.09,SPY,Overall Market
+2026-03-27,634.09,SPY,Overall Market
+2026-03-30,631.97,SPY,Overall Market
+2026-03-31,650.34,SPY,Overall Market
+2026-04-01,655.24,SPY,Overall Market
+2026-04-02,655.83,SPY,Overall Market
+2026-04-06,658.93,SPY,Overall Market
+2025-11-10,86.63,XLB,Materials
+2025-11-11,87.53,XLB,Materials
+2025-11-12,88.15,XLB,Materials
+2025-11-13,87.57,XLB,Materials
+2025-11-14,86.77,XLB,Materials
+2025-11-17,85.45,XLB,Materials
+2025-11-18,85.52,XLB,Materials
+2025-11-19,85.74,XLB,Materials
+2025-11-20,84.46,XLB,Materials
+2025-11-21,86.35,XLB,Materials
+2025-11-24,86.52,XLB,Materials
+2025-11-25,87.81,XLB,Materials
+2025-11-26,88.89,XLB,Materials
+2025-11-28,89.4,XLB,Materials
+2025-12-01,89.18,XLB,Materials
+2025-12-02,88.37,XLB,Materials
+2025-12-03,88.99,XLB,Materials
+2025-12-04,88.47,XLB,Materials
+2025-12-05,44.09,XLB,Materials
+2025-12-08,43.48,XLB,Materials
+2025-12-09,43.39,XLB,Materials
+2025-12-10,44.24,XLB,Materials
+2025-12-11,45.12,XLB,Materials
+2025-12-12,45.15,XLB,Materials
+2025-12-15,45.12,XLB,Materials
+2025-12-16,45.0,XLB,Materials
+2025-12-17,45.19,XLB,Materials
+2025-12-18,45.17,XLB,Materials
+2025-12-19,45.37,XLB,Materials
+2025-12-22,45.67,XLB,Materials
+2025-12-23,45.75,XLB,Materials
+2025-12-24,45.84,XLB,Materials
+2025-12-26,46.11,XLB,Materials
+2025-12-29,45.74,XLB,Materials
+2025-12-30,45.73,XLB,Materials
+2025-12-31,45.35,XLB,Materials
+2026-01-02,46.12,XLB,Materials
+2026-01-05,46.58,XLB,Materials
+2026-01-06,47.5,XLB,Materials
+2026-01-07,46.68,XLB,Materials
+2026-01-08,47.5,XLB,Materials
+2026-01-09,48.26,XLB,Materials
+2026-01-12,48.52,XLB,Materials
+2026-01-13,48.73,XLB,Materials
+2026-01-14,48.75,XLB,Materials
+2026-01-15,48.96,XLB,Materials
+2026-01-16,48.68,XLB,Materials
+2026-01-20,48.19,XLB,Materials
+2026-01-21,49.24,XLB,Materials
+2026-01-22,49.52,XLB,Materials
+2026-01-23,49.97,XLB,Materials
+2026-01-26,50.03,XLB,Materials
+2026-01-27,49.98,XLB,Materials
+2026-01-28,49.95,XLB,Materials
+2026-01-29,50.0,XLB,Materials
+2026-01-30,49.27,XLB,Materials
+2026-02-02,49.65,XLB,Materials
+2026-02-03,50.7,XLB,Materials
+2026-02-04,51.89,XLB,Materials
+2026-02-05,50.5,XLB,Materials
+2026-02-06,51.51,XLB,Materials
+2026-02-09,52.18,XLB,Materials
+2026-02-10,52.91,XLB,Materials
+2026-02-11,53.62,XLB,Materials
+2026-02-12,52.83,XLB,Materials
+2026-02-13,53.31,XLB,Materials
+2026-02-17,52.7,XLB,Materials
+2026-02-18,53.02,XLB,Materials
+2026-02-19,52.83,XLB,Materials
+2026-02-20,52.96,XLB,Materials
+2026-02-23,52.96,XLB,Materials
+2026-02-24,53.36,XLB,Materials
+2026-02-25,53.06,XLB,Materials
+2026-02-26,53.0,XLB,Materials
+2026-02-27,53.41,XLB,Materials
+2026-03-02,53.25,XLB,Materials
+2026-03-03,51.94,XLB,Materials
+2026-03-04,51.92,XLB,Materials
+2026-03-05,50.83,XLB,Materials
+2026-03-06,49.86,XLB,Materials
+2026-03-09,49.99,XLB,Materials
+2026-03-10,49.88,XLB,Materials
+2026-03-11,49.84,XLB,Materials
+2026-03-12,49.68,XLB,Materials
+2026-03-13,49.19,XLB,Materials
+2026-03-16,49.4,XLB,Materials
+2026-03-17,49.52,XLB,Materials
+2026-03-18,48.48,XLB,Materials
+2026-03-19,47.74,XLB,Materials
+2026-03-20,46.98,XLB,Materials
+2026-03-23,47.55,XLB,Materials
+2026-03-24,48.45,XLB,Materials
+2026-03-25,49.41,XLB,Materials
+2026-03-26,49.09,XLB,Materials
+2026-03-27,48.91,XLB,Materials
+2026-03-30,49.09,XLB,Materials
+2026-03-31,49.97,XLB,Materials
+2026-04-01,50.46,XLB,Materials
+2026-04-02,50.41,XLB,Materials
+2026-04-06,50.22,XLB,Materials
+2025-11-10,238.96,XLY,Consumer Discretionary
+2025-11-11,239.55,XLY,Consumer Discretionary
+2025-11-12,237.94,XLY,Consumer Discretionary
+2025-11-13,232.0,XLY,Consumer Discretionary
+2025-11-14,230.89,XLY,Consumer Discretionary
+2025-11-17,228.72,XLY,Consumer Discretionary
+2025-11-18,224.5,XLY,Consumer Discretionary
+2025-11-19,224.51,XLY,Consumer Discretionary
+2025-11-20,221.16,XLY,Consumer Discretionary
+2025-11-21,225.5,XLY,Consumer Discretionary
+2025-11-24,228.51,XLY,Consumer Discretionary
+2025-11-25,233.4,XLY,Consumer Discretionary
+2025-11-26,235.0,XLY,Consumer Discretionary
+2025-11-28,236.46,XLY,Consumer Discretionary
+2025-12-01,236.6,XLY,Consumer Discretionary
+2025-12-02,236.44,XLY,Consumer Discretionary
+2025-12-03,238.99,XLY,Consumer Discretionary
+2025-12-04,238.14,XLY,Consumer Discretionary
+2025-12-05,119.73,XLY,Consumer Discretionary
+2025-12-08,117.99,XLY,Consumer Discretionary
+2025-12-09,117.98,XLY,Consumer Discretionary
+2025-12-10,119.71,XLY,Consumer Discretionary
+2025-12-11,120.18,XLY,Consumer Discretionary
+2025-12-12,120.7,XLY,Consumer Discretionary
+2025-12-15,121.73,XLY,Consumer Discretionary
+2025-12-16,121.93,XLY,Consumer Discretionary
+2025-12-17,120.52,XLY,Consumer Discretionary
+2025-12-18,122.34,XLY,Consumer Discretionary
+2025-12-19,121.85,XLY,Consumer Discretionary
+2025-12-22,122.34,XLY,Consumer Discretionary
+2025-12-23,122.17,XLY,Consumer Discretionary
+2025-12-24,122.59,XLY,Consumer Discretionary
+2025-12-26,122.05,XLY,Consumer Discretionary
+2025-12-29,120.85,XLY,Consumer Discretionary
+2025-12-30,120.36,XLY,Consumer Discretionary
+2025-12-31,119.41,XLY,Consumer Discretionary
+2026-01-02,118.35,XLY,Consumer Discretionary
+2026-01-05,120.3,XLY,Consumer Discretionary
+2026-01-06,121.07,XLY,Consumer Discretionary
+2026-01-07,120.9,XLY,Consumer Discretionary
+2026-01-08,122.92,XLY,Consumer Discretionary
+2026-01-09,124.41,XLY,Consumer Discretionary
+2026-01-12,124.52,XLY,Consumer Discretionary
+2026-01-13,124.21,XLY,Consumer Discretionary
+2026-01-14,122.25,XLY,Consumer Discretionary
+2026-01-15,122.7,XLY,Consumer Discretionary
+2026-01-16,122.3,XLY,Consumer Discretionary
+2026-01-20,119.12,XLY,Consumer Discretionary
+2026-01-21,121.4,XLY,Consumer Discretionary
+2026-01-22,122.62,XLY,Consumer Discretionary
+2026-01-23,123.13,XLY,Consumer Discretionary
+2026-01-26,122.32,XLY,Consumer Discretionary
+2026-01-27,122.69,XLY,Consumer Discretionary
+2026-01-28,121.77,XLY,Consumer Discretionary
+2026-01-29,121.19,XLY,Consumer Discretionary
+2026-01-30,121.17,XLY,Consumer Discretionary
+2026-02-02,121.97,XLY,Consumer Discretionary
+2026-02-03,120.99,XLY,Consumer Discretionary
+2026-02-04,120.1,XLY,Consumer Discretionary
+2026-02-05,117.51,XLY,Consumer Discretionary
+2026-02-06,117.99,XLY,Consumer Discretionary
+2026-02-09,117.55,XLY,Consumer Discretionary
+2026-02-10,118.33,XLY,Consumer Discretionary
+2026-02-11,117.76,XLY,Consumer Discretionary
+2026-02-12,116.13,XLY,Consumer Discretionary
+2026-02-13,116.18,XLY,Consumer Discretionary
+2026-02-17,116.04,XLY,Consumer Discretionary
+2026-02-18,117.02,XLY,Consumer Discretionary
+2026-02-19,116.24,XLY,Consumer Discretionary
+2026-02-20,117.45,XLY,Consumer Discretionary
+2026-02-23,114.99,XLY,Consumer Discretionary
+2026-02-24,116.74,XLY,Consumer Discretionary
+2026-02-25,117.09,XLY,Consumer Discretionary
+2026-02-26,117.05,XLY,Consumer Discretionary
+2026-02-27,116.86,XLY,Consumer Discretionary
+2026-03-02,115.42,XLY,Consumer Discretionary
+2026-03-03,114.36,XLY,Consumer Discretionary
+2026-03-04,116.39,XLY,Consumer Discretionary
+2026-03-05,116.55,XLY,Consumer Discretionary
+2026-03-06,114.44,XLY,Consumer Discretionary
+2026-03-09,114.59,XLY,Consumer Discretionary
+2026-03-10,114.44,XLY,Consumer Discretionary
+2026-03-11,114.14,XLY,Consumer Discretionary
+2026-03-12,111.52,XLY,Consumer Discretionary
+2026-03-13,110.86,XLY,Consumer Discretionary
+2026-03-16,112.2,XLY,Consumer Discretionary
+2026-03-17,113.18,XLY,Consumer Discretionary
+2026-03-18,110.57,XLY,Consumer Discretionary
+2026-03-19,109.7,XLY,Consumer Discretionary
+2026-03-20,107.74,XLY,Consumer Discretionary
+2026-03-23,110.12,XLY,Consumer Discretionary
+2026-03-24,109.68,XLY,Consumer Discretionary
+2026-03-25,110.73,XLY,Consumer Discretionary
+2026-03-26,108.83,XLY,Consumer Discretionary
+2026-03-27,105.68,XLY,Consumer Discretionary
+2026-03-30,105.66,XLY,Consumer Discretionary
+2026-03-31,108.98,XLY,Consumer Discretionary
+2026-04-01,109.8,XLY,Consumer Discretionary
+2026-04-02,108.15,XLY,Consumer Discretionary
+2026-04-06,109.04,XLY,Consumer Discretionary
