@@ -17,10 +17,10 @@ import requests
 #-----------------------------------------
 
 # Insert your API key here which you can get for free on th website https://www.alphavantage.co/support/#api-key
-API_KEY = "AZEFOCGEB3M96QBI"
+API_KEY = "YOUR_API_KEY_HERE"
 
 # you can change the function to get different data, for example TIME_SERIES_INTRADAY, TIME_SERIES_WEEKLY, TIME_SERIES_MONTHLY...
-FUNCTION = "TIME_SERIES_DAILY_ADJUSTED"
+FUNCTION = "TIME_SERIES_DAILY"
 
 # These are the tickers for the sectors ETFs.
 TICKERS= ["SPY", "XLK", "XLF", "XLV", "XLE", "XLY", "XLU", "XLP", "XLB"]
@@ -28,22 +28,26 @@ TICKERS= ["SPY", "XLK", "XLF", "XLV", "XLE", "XLY", "XLU", "XLP", "XLB"]
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
+BASE_URL = "https://www.alphavantage.co/query"
+
+for ticker in TICKERS:
+    params = {
+        "function": FUNCTION,
+        "symbol": ticker,
+        "outputsize": "compact",  # you can change to "full" if you have premium
+        "datatype": "csv",
+        "apikey": API_KEY,  
+    }
+
+    print(f"Downloading data for {ticker} from Alpha Vantage...")
 
 
-url = (
-    "https://www.alphavantage.co/query"
-    f"function={FUNCTION}"
-    f"symbol={TICKERS}"
-    f"outputsize=full"
-    f"datatype=csv"
-    f"apikey={API_KEY}"
-)
-print(f"Downloading data for {TICKERS} from Alpha Vantage API...")
+    response = requests.get(BASE_URL, params=params, timeout=30)
+    response.raise_for_status()
 
-response = requests.get(url, timeout=30)
-response.raise_for_status()
+    output_file = RAW_DIR / f"{ticker}.csv"
+    output_file.write_bytes(response.content)
 
-output_file = RAW_DIR / f"{TICKERS}.csv"
-output_file.write_bytes(response.content)
+    print(f"Saved {ticker} to {output_file}")
 
-print(f"Saved {TICKERS} to {output_file}")
+print("All data downloaded successfully!")
