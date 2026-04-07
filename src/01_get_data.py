@@ -26,7 +26,7 @@ for ticker in TICKERS:
 
     df= yf.download(
         ticker, 
-        period="5y", # Download data for the last 5 years.
+        period="10y", # Download data for the last 10 years.
         interval="1d",  # Daily data
         auto_adjust=False, # keeps yahoo's normal columns including Adj Close which is what we will use for our analysis. If we set this to True, it will adjust the Close price for dividends and stock splits, which we don't want for our analysis.
         actions=False, # Exclude dividends and stock splits from the data.
