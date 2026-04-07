@@ -28,7 +28,7 @@ for ticker in TICKERS:
         ticker, 
         period="5y", # Download data for the last 5 years.
         interval="1d",  # Daily data
-        auto_adjust=False, # Adjusted Close price, which accounts for corporate actions like dividends and stock splits.
+        auto_adjust=False, # keeps yahoo's normal columns including Adj Close which is what we will use for our analysis. If we set this to True, it will adjust the Close price for dividends and stock splits, which we don't want for our analysis.
         actions=False, # Exclude dividends and stock splits from the data.
         progress=False, # Disable the progress bar for cleaner output.
         threads=False, # Disable multithreading to avoid potential issues with large downloads.
