@@ -50,5 +50,20 @@ for csv_file in RAW_DIR.glob("*.csv"):
     #sort the data by timestamp in ascending order
     df = df.sort_values("timestamp")
 
+# if no valid files were found, print a message
+if not all_data:
+    print("No valid CSV files were found in data/raw.")
 
+else:
+    # combine all cleaned dataframes into one dataset
+    combined_df = pd.concat(all_data, ignore_index=True)
 
+    # sort the final dataset by ticker and timestamp
+    combined_df = combined_df.sort_values(["ticker", "timestamp"]).reset_index(drop=True)
+
+    # save the cleaned dataset into the clean folder
+    output_file = CLEAN_DIR / "sector_prices.csv"
+    combined_df.to_csv(output_file, index=False)
+
+    print(f"Saved cleaned data to {output_file}")
+    print(combined_df.head())
