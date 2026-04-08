@@ -1,4 +1,14 @@
+# macOS files
 .DS_Store
+
+# Python cache and compiled files
 __pycache__/
 *.pyc
+
+# VS Code local files
 .vscode/
+
+# Environment files
+.env
+*.env
+.env.*
