@@ -22,6 +22,7 @@ df = df.sort_values(["ticker", "Date"]).reset_index(drop=True)
 # The formula for daily return is: (Current Day's Price - Previous Day's Price) / Previous Day's Price * 100
 df["Daily Return (%)"] = df.groupby("ticker")["Adj Close"].pct_change() * 100 # this calculates the percentage change in the Adj Close price for each ticker, which gives us the daily return in percentage and its all seperated by ticker.
 df["Daily Return (%)"] = df["Daily Return (%)"].round(3) # this rounds the daily return to 3 decimal places
+
 # Save the results to a new CSV file
 df.to_csv(OUTPUT_FILE, index=False)
 
