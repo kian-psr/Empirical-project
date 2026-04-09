@@ -46,8 +46,13 @@ print("Saved summary statistics table.")
 #-----------------------------------------------------------------------------------------------------------------
 # this is to calculate the cumulative return for each sector and plot it over time
 
+import matplotlib.dates as mdates   # this is to format the x-axis of the plot to show dates in a better way
+
 # turn percent into decimal for the calulation of cumulative return
 df["Daily Return (Decimal)"] = df["Daily Return (%)"] / 100
+
+# convert the Date column to datetime format for plotting
+df["Date"] = pd.to_datetime(df["Date"])
 
 # Calculate the cumulative return for each ticker. Growth if £1 invested
 
