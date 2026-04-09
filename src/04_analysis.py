@@ -87,8 +87,6 @@ for ticker in df["ticker"].unique():
             linewidth=1
         )
     
-
-
 plt.title("Cumulative Returns of Sector ETFs & Benchmark (SPY)")
 plt.xlabel("Date")
 plt.ylabel("Cumulative Return")
@@ -111,7 +109,53 @@ plt.close()
 print("Saved cumulative returns figure.")
 
 #-----------------------------------------------------------------------------------------------------------------
-# 3. Volatility comparison figure 
+# 3. Correlation heatmap of daily returns 
+#-----------------------------------------------------------------------------------------------------------------
+# this is to calculate the correlation of daily returns between the different sectors and plot it as a heatmap
+
+#keep only the necessary columns for the correlation calculation
+corr_df = df[["ticker", "Date", "Daily Return (%)"]].copy()
+
+# pivot the data to have tickers as columns and dates as rows, with daily returns as values
+corr_wide = corr_df.pivot(index="Date", columns="ticker", values="Daily Return (%)")
+
+# calculate the correlation matrix 
+correlation_matrix = corr_wide.corr().round(3)
+
+# save as table
+correlation_matrix.to_csv(OUTPUT_TABLE / "correlation_matrix.csv")
+print("Saved correlation matrix table.")
+
+# plot the correlation matrix as a heatmap
+plt.figure(figsize=(10, 8))
+plt.imshow(correlation_matrix, cmap="coolwarm", vmin=-1, vmax=1)
+plt.colorbar(label="Correlation Coefficient")
+plt.xticks(ticks=np.arange(len(correlation_matrix.columns)), labels=correlation_matrix.columns, rotation=45)
+plt.yticks(ticks=np.arange(len(correlation_matrix.index)), labels=correlation_matrix.index)
+
+# add correlation values inside each cell
+for i in range(len(correlation_matrix.index)):
+    for j in range(len(correlation_matrix.columns)):
+        plt.text(
+            j,
+            i,
+            correlation_matrix.iloc[i, j],
+            ha="center",
+            va="center",
+            color="black",
+            fontsize=9
+        )
+
+plt.title("Correlation Heatmap of Daily Returns")
+plt.tight_layout()
+
+plt.savefig(OUTPUT_FIGURE / "correlation_heatmap.png")
+plt.close() 
+
+print("Saved correlation heatmap figure.")
+
+#-----------------------------------------------------------------------------------------------------------------
+# 4. Volatility comparison 
 #-----------------------------------------------------------------------------------------------------------------
 
 # this is to compare the volatility of the different sectors using a bar chart.
