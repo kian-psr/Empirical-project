@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 from matplotlib import pyplot as plt
 from matplotlib.ticker import PercentFormatter
+import numpy as np
 
 # Set file paths again
 CLEAN_DIR = Path("data/clean")
@@ -108,3 +109,25 @@ plt.savefig(OUTPUT_FIGURE / "cumulative_returns.png")
 plt.close()
 
 print("Saved cumulative returns figure.")
+
+#-----------------------------------------------------------------------------------------------------------------
+# 3. Volatility comparison figure 
+#-----------------------------------------------------------------------------------------------------------------
+
+# this is to compare the volatility of the different sectors using a bar chart.
+# we will use annulaised volatility for this
+# the formula = daily volatility * sqrt(252) as 252 is the number of trading days in a year
+
+# remove any rows if there are missing values in daily return again just to be sure
+vol_df = df.dropna(subset=["Daily Return (%)"]) 
+
+#calculate the annualized volatility for each ticker and make a table
+volatility_table = (
+    vol_df.groupby("ticker")["Daily Return (%)"]
+    .std() * np.sqrt(252) # this calculates the standard deviation of daily returns for each ticker and then annualizes it by multiplying by the square root of 252
+).round(3).sort_values(ascending=False).reset_index()
+
+#save the volatility table to a csv file
+volatility_table.to_csv(OUTPUT_TABLE / "volatility_table.csv", index=False)
+
+print("Saved volatility table.")
