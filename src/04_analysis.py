@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from matplotlib import pyplot as plt
+from matplotlib.ticker import PercentFormatter
 
 # Set file paths again
 CLEAN_DIR = Path("data/clean")
@@ -67,17 +68,40 @@ plt.figure(figsize=(12, 7))
 
 for ticker in df["ticker"].unique():
     ticker_data = df[df["ticker"] == ticker]
-    plt.plot(ticker_data["Date"], ticker_data["cumulative return"], label=ticker)
+    
+    # Highlight SPY with a thicker line and different color to make it stand out as the benchmark
+    if ticker == "SPY":
+        plt.plot(
+            ticker_data["Date"], 
+            ticker_data["cumulative return"], 
+            label=ticker, 
+            linewidth=2.8, 
+            color="black"
+        )
+    else:
+        plt.plot(
+            ticker_data["Date"], 
+            ticker_data["cumulative return"], 
+            label=ticker, 
+            linewidth=1.8
+        )
+    
+
 
 plt.title("Cumulative Returns of Sector ETFs & Benchmark (SPY)")
 plt.xlabel("Date")
 plt.ylabel("Cumulative Return")
 plt.legend()
-plt.xticks(rotation=45)
 
-from matplotlib.ticker import PercentFormatter
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))  # Format y-axis as percentage
 
+# add light horizontal grid lines
+plt.grid(axis="y", linestyle="--", alpha=0.35)
+
+# move the legend outside the plot area to the right
+plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))
+
+plt.xticks(rotation=45)
 plt.tight_layout()
 
 plt.savefig(OUTPUT_FIGURE / "cumulative_returns.png")
