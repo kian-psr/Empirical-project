@@ -134,7 +134,8 @@ print("Saved volatility table.")
 
 # plot the volatility comparison as a bar chart
 plt.figure(figsize=(10, 6))
-plt.bar(volatility_table["ticker"], volatility_table["Annualized Volatility (%)"], color="skyblue")
+colors = ["lightcoral" if ticker == "SPY" else "skyblue" for ticker in volatility_table["ticker"]]
+plt.bar(volatility_table["ticker"], volatility_table["Annualized Volatility (%)"], color=colors)
 plt.title("Annualized Volatility of Sector ETFs and Benchmark (SPY)") 
 plt.xlabel("Ticker")
 plt.ylabel("Annualized Volatility (%)")
