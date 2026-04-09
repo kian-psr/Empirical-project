@@ -53,7 +53,7 @@ df["Daily Return (Decimal)"] = df["Daily Return (%)"] / 100
 # convert the Date column to datetime format for plotting
 df["Date"] = pd.to_datetime(df["Date"])
 
-# sort fdata again just to make sure its in the right order
+# sort data again just to make sure its in the right order
 df = df.sort_values(["ticker", "Date"]).reset_index(drop=True)
 
 # Calculate the cumulative return for each ticker. Growth if £1 invested
@@ -75,7 +75,7 @@ for ticker in df["ticker"].unique():
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
             label=ticker, 
-            linewidth=2.8, 
+            linewidth=1.8, 
             color="black"
         )
     else:
@@ -83,7 +83,7 @@ for ticker in df["ticker"].unique():
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
             label=ticker, 
-            linewidth=1.8
+            linewidth=1
         )
     
 
