@@ -22,7 +22,18 @@ if "Date" not in df.columns or "Daily Return (%)" not in df.columns:
 # 1. Summary statistics table for each sector (ticker)
 #-----------------------------------------------------------------------------------------------------------------
 summary_stats = df.groupby("ticker")["Daily Return (%)"].agg(["mean", "std", "min", "max", "count"]).reset_index()
+summary_stats = summary_stats.round(3)  # Round the statistics to 3 decimal places for better readability
+
+summary_stats = summary_stats.rename(columns={
+    "mean": "Mean Daily Return (%)",
+    "std": "Volatility (Std Dev)",
+    "min": "Worst Daily Return (%)",
+    "max": "Best Daily Return (%)",
+    "count": "Total Observations"
+})
+
 summary_stats.to_csv(OUTPUT_TABLE / "summary_statistics.csv", index=False)
+
 print(f"Summary statistics saved to {OUTPUT_TABLE / 'summary_statistics.csv'}")
 
 print("Saved summary statistics table.")
