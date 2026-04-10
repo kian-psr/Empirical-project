@@ -44,6 +44,7 @@ You can install them with the following command line:
 #### Flowchart
 
 ```{mermaid}
+...
 flowchart LR
     A(Download Data) --> B(Save Raw Data)
     B --> C(Clean Data)
@@ -56,8 +57,6 @@ flowchart LR
     F --> J(volatility_comparison.png)
     F --> K(market_beta_regression_result.csv)
     F --> L(market_beta_chart.png)
-
-
 ```
 
 1. `src/01_get_data.py`
