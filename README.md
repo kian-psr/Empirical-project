@@ -39,17 +39,16 @@ This Project uses exclusivley Python and the following libaries:
 
 You can install them with the following command line: `python3 -m pip install pandas numpy matplotlib seaborn yfinance statsmodels`
 
-### Project Workflow
 
-#### Flowchart
+### Flowchart of actions
 
 ``` mermaid
 flowchart LR
     A(Download Data) --> B(Save Raw Data)
-    B --> C(Clean Data)
+    B --> C(Clean & Combine Data)
     C --> D(Save Clean Data)
-    D --> E(Use Clean Data for Analysis)
-    E --> F[Get Output]
+    D --> E(Calculate Daily Returns)
+    E --> F[Run Analysis]
     F --> G("cumulative_return.png")
     F --> H("correlation_heatmap.png")
     F --> I("volatility_table.csv")
@@ -58,4 +57,30 @@ flowchart LR
     F --> L("market_beta_chart.png")
 ```
 
-1.  `src/01_get_data.py` This script is to download daily ETF aswell as market (SPY) price data from Yahoo Finance using yfinance for the the last 10 years using an interval of 1 day
+### Project Workflow
+1. `src/01_get_data.py`
+  This script is to download daily ETF aswell as market (SPY) price data from Yahoo Finance using yfinance for the the last 10 years using an interval of 1 day
+
+2. `src/02_clean_data.py`
+  This script reads the raw data and cleans it by:
+  - keeping required price columns
+  - removes lines with missing data
+  - sort the data by date and tickers
+  - adds ticker & sector labels
+  - saves data to `data/clean/sector_prices.csv`
+
+3. `src/03_daily_return_data.py`
+  Calculates daily percentage return for all tickers and every day for last 10 years using the cleaned data
+  Saves the data to `data/clean/sector_daily_return.csv`
+
+4. `src/04_analysis.py`
+  Produces the descritpive outputs and visualsation used in the project:
+  - summary statistics
+  - cumulative return figure
+  - volatility comparison
+  - correlation heatmap
+  These are saved in `output/tables` and `output/figures`
+
+5. `src/05_market_beta_regression.py`
+  Runs a market model regression for each sector ETF using SPY as the market benchmark
+  It saves the regression results table and the market beta figure in `output/tables` and `output/figures`
