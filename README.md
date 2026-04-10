@@ -43,7 +43,7 @@ You can install them with the following command line:
 
 #### Flowchart
 
-```{mermaid}
+```mermaid
 ...
 flowchart LR
     A(Download Data) --> B(Save Raw Data)
