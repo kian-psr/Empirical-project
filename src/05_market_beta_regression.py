@@ -43,7 +43,7 @@ for ticker in sectors_df["ticker"].unique():
     merged_data["Daily Return (%)"] = pd.to_numeric(merged_data["Daily Return (%)"], errors="coerce")
     merged_data["Market Daily Return (%)"] = pd.to_numeric(merged_data["Market Daily Return (%)"], errors="coerce")
 
-    # Replace inf with NaN, then drop missing rows
+    # Replace inf with NaN, then drop missing rows. inf means that there was a division by zero in the percentage change calculation, which can happen if the previous day's price was zero. we can replace the inf with NaN and then drop those rows to avoid issues in the regression analysis. 
     merged_data = merged_data.replace([np.inf, -np.inf], np.nan)
     merged_data = merged_data.dropna(subset=["Daily Return (%)", "Market Daily Return (%)"])
 
@@ -114,5 +114,3 @@ plt.tight_layout()
 plt.savefig(OUTPUT_FIGURE / "market_beta_chart.png")
 plt.close()
 print(f"Market beta chart saved to {OUTPUT_FIGURE / 'market_beta_chart.png'}")
-
-
