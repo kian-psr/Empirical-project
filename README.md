@@ -40,6 +40,26 @@ You can install them with the following command line:
 `python3 -m pip install pandas numpy matplotlib seaborn yfinance statsmodels`
 
 ### Project Workflow
+
+#### Flowchart
+
+```{mermaid}
+flowchart LR
+    A(Download Data) --> B(Save Raw Data)
+    B --> C(Clean Data)
+    C --> D(Save Clean Data)
+    D --> E(Use Clean Data for Analysis)
+    E --> F[Get Output]
+    F --> G(cumulative_return.png)
+    F --> H(correlation_heatmap.png)
+    F --> I(volatility_table.csv)
+    F --> J(volatility_comparison.png)
+    F --> K(market_beta_regression_result.csv)
+    F --> L(market_beta_chart.png)
+
+
+```
+
 1. `src/01_get_data.py`
 This script is to download daily ETF aswell as market (SPY) price data from Yahoo Finance using yfinance for the the last 10 years using an interval of 1 day
 
