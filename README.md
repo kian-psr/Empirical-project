@@ -10,10 +10,12 @@ In this project i will compare major equity sectors using daily market data and 
 
 ## Repository structure
 
-data/raw contains original data\
-data/clean contains cleaned datasets\
-output contains figures and tables\
-report contains the final blog or Quarto file src means **source code** and contains the main Python scripts used in the project .gitignore tells git what files to ignore, like uncessairy mac files
+- data/raw contains original data
+- data/clean contains cleaned datasets
+- output contains figures and tables
+- report contains the final blog as a Quarto file 
+- src means **source code** and contains the main Python scripts used in the project 
+- .gitignore tells git what files to ignore, like uncessairy mac files
 
 ## Replication
 
@@ -37,7 +39,8 @@ This Project uses exclusivley Python and the following libaries:
 - statsmodels:
   - Used for the stats model and the regression
 
-You can install them with the following command line: `python3 -m pip install pandas numpy matplotlib seaborn yfinance statsmodels`
+You can install them with the following command line: 
+`python3 -m pip install pandas numpy matplotlib seaborn yfinance statsmodels`
 
 
 ### Flowchart of actions
@@ -93,11 +96,11 @@ flowchart LR
 ### Run Order
  To get the project replicated you have to run the script in this order:
 
-`python3 src/01_get_data.py`
-`python3 src/02_clean_data.py`
-`python3 src/03_daily_return_data.py`
-`python3 src/04_analysis.py`
-`python3 src/05_market_beta_regression.py`
+`python3 src/01_get_data.py`\
+`python3 src/02_clean_data.py`\
+`python3 src/03_daily_return_data.py`\
+`python3 src/04_analysis.py`\
+`python3 src/05_market_beta_regression.py`\
 
 ## Output
 The final project outpus are stores in:
@@ -116,14 +119,14 @@ The final project blog is written in:
 
 #### The tickers represent the following:
 
-|Ticker|Meaning| Full name + Link|
-|------|-----|---------|
-|SPY|overall market| |
-|XLK|technology|[Technology Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk)  |   
-|XLF|financials|[Financial Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-financial-select-sector-spdr-etf-xlf)  |
-|XLV|health care|[Health Care Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-health-care-select-sector-spdr-etf-xlv)|
-|XLE|energy|[Energy Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-energy-select-sector-spdr-etf-xle)|
-|XLY|consumer discretionary|[Consumer Discretionary Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-discretionary-select-sector-spdr-etf-xly)|
-|XLU|utilities|[Utilities Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-utilities-select-sector-spdr-etf-xlu)|
-|XLP|consumer staples[Consumer Staples Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-staples-select-sector-spdr-etf-xlp)|
-|XLB|materials|[Materials Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-materials-select-sector-spdr-etf-xlb)|
+|Ticker|Full name & Link                                                                                                |
+|------|----------------------------------------------------------------------------------------------------------------|
+|SPY|[State Street® SPDR® S&P 500®](https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy)|
+|XLK|[State Street® Technology Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk)                                                                     |   
+|XLF|[State Street® Financial Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-financial-select-sector-spdr-etf-xlf)                                                                      |
+|XLV|[State Street® Health Care Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-health-care-select-sector-spdr-etf-xlv)                                                                    |
+|XLE|[State Street® Energy Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-energy-select-sector-spdr-etf-xle)                                                                         |
+|XLY|[State Street® Consumer Discretionary Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-discretionary-select-sector-spdr-etf-xly)                                                         |
+|XLU|[State Street® Utilities Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-utilities-select-sector-spdr-etf-xlu)                                                                      |
+|XLP|[State Street® Consumer Staples Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-staples-select-sector-spdr-etf-xlp)                                                               |
+|XLB|[State Street® Materials Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-materials-select-sector-spdr-etf-xlb)                                                                      |
