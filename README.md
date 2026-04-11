@@ -59,9 +59,11 @@ flowchart LR
 
 ### Project Workflow
 1. `src/01_get_data.py`
+
   This script is to download daily ETF aswell as market (SPY) price data from Yahoo Finance using yfinance for the the last 10 years using an interval of 1 day
 
 2. `src/02_clean_data.py`
+
   This script reads the raw data and cleans it by:
   - keeping required price columns
   - removes lines with missing data
@@ -70,10 +72,12 @@ flowchart LR
   - saves data to `data/clean/sector_prices.csv`
 
 3. `src/03_daily_return_data.py`
+
   Calculates daily percentage return for all tickers and every day for last 10 years using the cleaned data
   Saves the data to `data/clean/sector_daily_return.csv`
 
 4. `src/04_analysis.py`
+
   Produces the descritpive outputs and visualsation used in the project:
   - summary statistics
   - cumulative return figure
@@ -82,5 +86,44 @@ flowchart LR
   These are saved in `output/tables` and `output/figures`
 
 5. `src/05_market_beta_regression.py`
+
   Runs a market model regression for each sector ETF using SPY as the market benchmark
   It saves the regression results table and the market beta figure in `output/tables` and `output/figures`
+
+### Run Order
+ To get the project replicated you have to run the script in this order:
+
+`python3 src/01_get_data.py`
+`python3 src/02_clean_data.py`
+`python3 src/03_daily_return_data.py`
+`python3 src/04_analysis.py`
+`python3 src/05_market_beta_regression.py`
+
+## Output
+The final project outpus are stores in:
+- `output/figures` for figures in .png format
+- `output/tables` for tables in .csv format 
+
+The final project blog is written in:
+- `report/blog.qmd` the format is HTML
+
+## Notes
+
+#### Source of ETFs
+- All ETFs come from [**State Street**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs) to keep consistenty 
+- They are all American because it uses SPY as a benchmark 
+- It keeps the analysis consistent as SPY is consitently used as a benchmark across different analysis
+
+#### The tickers represent the following:
+
+|Ticker|Meaning| Full name + Link|
+|------|-----|---------|
+|SPY|overall market| |
+|XLK|technology|[Technology Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk)  |   
+|XLF|financials|[Financial Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-financial-select-sector-spdr-etf-xlf)  |
+|XLV|health care|[Health Care Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-health-care-select-sector-spdr-etf-xlv)|
+|XLE|energy|[Energy Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-energy-select-sector-spdr-etf-xle)|
+|XLY|consumer discretionary|[Consumer Discretionary Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-discretionary-select-sector-spdr-etf-xly)|
+|XLU|utilities|[Utilities Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-utilities-select-sector-spdr-etf-xlu)|
+|XLP|consumer staples[Consumer Staples Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-staples-select-sector-spdr-etf-xlp)|
+|XLB|materials|[Materials Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-materials-select-sector-spdr-etf-xlb)|
