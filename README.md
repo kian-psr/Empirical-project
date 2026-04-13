@@ -2,7 +2,7 @@
 
 ## Project question
 
-How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (β) to the overall market?
+How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (β) to the overall market over the last 16 years?
 
 ## Project overview
 
@@ -98,6 +98,12 @@ The final project outputs are stored in:
 - `report/blog.qmd` contains the final blogn in Quarto format
 
 ## Notes
+
+#### Data Range
+
+The data ranges over the last 16 years\
+From 2010-01-01 to 2026-01-01\
+This gives a wide range of historical data that provides a good  amount of data points for analysis, while also being recent enough.
 
 #### Source of ETFs
 
