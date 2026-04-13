@@ -27,7 +27,6 @@ This Project uses exclusively Python and the following libraries:
 
 - ***pandas***:
   - Used for cleaning, reading, and combining the data
-  - I used them to work with the CSV files and calculating returns
 - ***numpy***:
   - Used for numerical calculations
 - ***matplotlib***:
@@ -35,7 +34,7 @@ This Project uses exclusively Python and the following libraries:
 - ***seaborn***:
   - Used for more visual outputs like the heat-map
 - ***yfinance***:
-  - Open source program that I used to download the financial data from Yahoo Finance
+  - Open source program used to download the financial data from Yahoo Finance
 - ***statsmodels***:
   - Used for the stats model and the regression
 
@@ -44,18 +43,18 @@ You can install them with the following command line:\
 
 ### Flowchart of actions
 
-``` mermaid
+```mermaid
 flowchart LR
     A(Download Data) --> B(Save Raw Data)
     B --> C(Clean & Combine Data)
     C --> D(Save Clean Data)
     D --> E(Calculate Daily Returns)
     E --> F[Run Analysis]
-    F --> G("cumulative_return.png")
+    F --> G("cumulative_returns.png")
     F --> H("correlation_heatmap.png")
     F --> I("volatility_table.csv")
     F --> J("volatility_comparison.png")
-    F --> K("market_beta_regression_result.csv")
+    F --> K("market_beta_regression_results.csv")
     F --> L("market_beta_chart.png")
 ```
 
@@ -93,16 +92,17 @@ To get the project replicated you have to run the script in this order:
 
 ## Output
 
-The final project outputs are stores in: - `output/figures` for figures in .png format - `output/tables` for tables in .csv format
-
-The final project blog is written in: - `report/blog.qmd` the format is HTML
+The final project outputs are stored in: 
+- `output/figures` contains figures in .png format 
+- `output/tables` contains tables in .csv format
+- `report/blog.qmd` contains the final blogn in Quarto format
 
 ## Notes
 
 #### Source of ETFs
 
-- All ETFs come from [**State Street**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs) to keep consistently
-- They are all American because it uses SPY as a benchmark
+- All ETFs come from [**State Street**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs) to keep the sample consistent
+- They are all American because the project uses SPY as a benchmark
 - It keeps the analysis consistent as SPY is consistently used as a benchmark across different analysis
 
 #### The tickers represent the following:
