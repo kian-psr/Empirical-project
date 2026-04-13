@@ -19,7 +19,7 @@ In this project i will compare major equity sectors using daily market data and 
 
 ## Replication
 
-To reproduce this project, you have to run the script (src) in order from `src/01` to `src/05`
+To reproduce this project, you have to run the script in the `src` folder in order from `01` to `05`
 
 ### Required Packages:
 

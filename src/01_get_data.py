@@ -20,7 +20,7 @@ TICKERS= ["SPY", "XLK", "XLF", "XLV", "XLE", "XLY", "XLU", "XLP", "XLB"]
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-# The range of data is from 2010 to 2026 whichb gives 16 years of data, whihc gives a lot of historic data to work with
+# The range of data is from 2010 to 2026 which gives 16 years of data, this gives a lot of historic data to work with
 
 START_DATE = "2010-01-01"
 END_DATE = "2026-01-01"
