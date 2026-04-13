@@ -20,13 +20,18 @@ TICKERS= ["SPY", "XLK", "XLF", "XLV", "XLE", "XLY", "XLU", "XLP", "XLB"]
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-# tickers = yf.download(TICKERS, start="2010-01-01", end="2024-01-01", group_by='ticker')
+# The range of data is from 2010 to 2026 whichb gives 16 years of data, whihc gives a lot of historic data to work with
+
+START_DATE = "2010-01-01"
+END_DATE = "2026-01-01"
+
 for ticker in TICKERS:
     print(f"Downloading data for {ticker} from yfinance...")
 
     df= yf.download(
         ticker, 
-        period="10y", # Download data for the last 10 years.
+        start=START_DATE, 
+        end=END_DATE,
         interval="1d",  # Daily data
         auto_adjust=False, # keeps yahoo's normal columns including Adj Close which is what we will use for our analysis. If we set this to True, it will adjust the Close price for dividends and stock splits, which we don't want for our analysis.
         actions=False, # Exclude dividends and stock splits from the data.
