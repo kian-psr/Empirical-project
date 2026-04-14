@@ -1,6 +1,7 @@
 ---
 Title: 'How do equity sectors differ in returns, volatility, and sensitivity to the overall market?'
 Format: html
+output-file: index.html
 ---
 
 Word count: 1000-2500 words
