@@ -111,7 +111,7 @@ print("Saved cumulative returns figure.")
 #-----------------------------------------------------------------------------------------------------------------
 # 3. Correlation heatmap of daily returns 
 #-----------------------------------------------------------------------------------------------------------------
-# this is to calculate the correlation of daily returns between the different sectors and plot it as a heatmap
+# This is to calculate the correlation of daily returns between the different sectors and plot it as a heatmap
 
 #keep only the necessary columns for the correlation calculation
 corr_df = df[["ticker", "Date", "Daily Return (%)"]].copy()
