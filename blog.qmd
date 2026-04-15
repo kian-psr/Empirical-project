@@ -1,0 +1,32 @@
+---
+Title: 'How do equity sectors differ in returns, volatility, and sensitivity to the overall market?'
+Format: html
+output-file: index.html
+---
+
+# Which U.S. Equity Sectors Really Behaved Differently in the Last Decade and a Half? 
+
+Word count: xxxx words
+
+
+## Introduction
+
+Investors often talk about equity sectors as if their differences are obvious and predictable. Technology is often associated with rapid growth, utilities with stability, and energy with strong cycles. But investing in equity sectors is about more than just identifying which sector has the best return. Considering factors like how volatile sectors are, how they move with each other, and how sensitive they are to movements in the market is equally, if not more important\.
+
+This blog examines whether major U.S. equity sectors really behaved differently over time. Using daily ETF data from 1st of January 2010, to 31st of December 2025, I will look at four main dimensions: long-run returns, volatility, correlation, and market beta. The goal is to understand if any sectors offered any meaningfully different investment profiles over the period, and to see what the trends have been.
+
+
+## Data
+
+This section will describe the sector ETFs, the market benchmark, the sample period, and the cleaning process.
+I will use the following sectors:
+
+## Results
+
+This section will present figures and summary statistics and regression results that are made in python. 
+
+## Analysis
+This section will interpret the results and discuss the differences between sectors in terms of returns, volatility, and sensitivity to the overall market. I will also discuss any interesting patterns or trends that emerge from the data.
+
+## Conclusion
+This section will summarise the main findings and discuss the limits of the analysis.
