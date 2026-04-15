@@ -11,9 +11,10 @@ Word count: xxxx words
 
 ## Introduction
 
-The first comparison used by people to analyse equity sectors is almost always returns, but choosing the right sector is about so much more than that. 
+Investors often talk about equity sectors as if their differences are obvious and predictable. Technology is often associated with rapid growth, utilities with stability, and energy with strong cycles. But investing in equity sectors is about more than just identifying which sector has the best return. Considering factors like how volatile sectors are, how they move with each other, and how sensitive they are to movements in the market is equally, if not more important\.
 
-Introduce the topic and the data used in the analysis. It compares major equity sectors using daily market data. The goal is to see how sectors differ in performance, volatility, and sensitivity to overall market movements. this is the base to my question: "How do equity sectors differ in returns, volatility, and sensitivity to the overall market?"
+This blog examines whether major U.S. equity sectors really behaved differently over time. Using daily ETF data from 1st of January 2010, to 31st of December 2025, I will look at four main dimensions: long-run returns, volatility, correlation, and market beta. The goal is to understand if any sectors offered any meaningfully different investment profiles over the period, and to see what the trends have been.
+
 
 ## Data
 
