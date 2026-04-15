@@ -4,11 +4,14 @@ Format: html
 output-file: index.html
 ---
 
-Word count: 1000-2500 words
+# Which U.S. Equity Sectors Really Behaved Differently in the Last Decade and a Half? 
 
-Structure:
+Word count: xxxx words
+
 
 ## Introduction
+
+The first comparison used by people to analyse equity sectors is almost always returns, but choosing the right sector is about so much more than that. 
 
 Introduce the topic and the data used in the analysis. It compares major equity sectors using daily market data. The goal is to see how sectors differ in performance, volatility, and sensitivity to overall market movements. this is the base to my question: "How do equity sectors differ in returns, volatility, and sensitivity to the overall market?"
 

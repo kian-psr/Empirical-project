@@ -2,7 +2,7 @@
 
 ## Project question
 
-How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (β) to the overall market over the last 16 years?
+How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (β) to the overall market over the last 15 years?
 
 ## Blog post
 The Blog is found on my github website under the link:\
