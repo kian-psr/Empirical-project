@@ -14,8 +14,9 @@ __pycache__/
 .env.*
 
 # Website and blog output files
-report/.quarto/
-report/**/*.quarto_ipynb
-report/docs/
-report/blog_files/
-report/*.html
+/.quarto/
+**/*.quarto_ipynb
+docs/
+blog_files/
+*.html
+
