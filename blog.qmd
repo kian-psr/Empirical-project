@@ -17,9 +17,24 @@ This blog examines whether major U.S. equity sectors really behaved differently 
 
 
 ## Data
+The analysis uses daily adjusted price data for 8 major sector ETFs, as well as for SPY, the benchmark of this analysis. The sample covers a range of 15 years, giving a long time frame that includes both stable periods and some more volatile periods like the covid 19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs). Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.\
 
-This section will describe the sector ETFs, the market benchmark, the sample period, and the cleaning process.
-I will use the following sectors:
+**The following table gives an overview of what each ticker stands for:**
+
+| Ticker |Sector or Benchmark      | Role in the analysis |
+|--------|-------------------------|----------------------|
+| SPY    | S&P 500 ETF             | Benchmark            |
+| XLK    | Technology              | Sector ETF           |
+| XLF    | Financial               | Sector ETF           |
+| XLV    | Health Care             | Sector ETF           |
+| XLE    | Energy                  | Sector ETF           |
+| XLY    | Consumer Discretionary  | Sector ETF           |
+| XLU    | Utilities               | Sector ETF           |
+| XLP    | Consumer Staples        | Sector ETF           |
+| XLB    | Materials               | Sector ETF           |
+
+Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.
+
 
 ## Results
 

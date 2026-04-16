@@ -60,7 +60,66 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>This section will describe the sector ETFs, the market benchmark, the sample period, and the cleaning process. I will use the following sectors:</p>
+<p>The analysis uses daily adjusted price data for 8 major sector ETFs, as well as for SPY, the benchmark of this analysis. The sample covers a range of 15 years, giving a long time frame that includes both stable periods and some more volatile periods like the covid 19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the <a href="https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs"><strong>State Street SPDR Family</strong></a>. Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.<br>
+</p>
+<p><strong>The following table gives an overview of what each ticker stands for:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ticker</th>
+<th>Sector or Benchmark</th>
+<th>Role in the analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SPY</td>
+<td>S&amp;P 500 ETF</td>
+<td>Benchmark</td>
+</tr>
+<tr class="even">
+<td>XLK</td>
+<td>Technology</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="odd">
+<td>XLF</td>
+<td>Financial</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="even">
+<td>XLV</td>
+<td>Health Care</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="odd">
+<td>XLE</td>
+<td>Energy</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="even">
+<td>XLY</td>
+<td>Consumer Discretionary</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="odd">
+<td>XLU</td>
+<td>Utilities</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="even">
+<td>XLP</td>
+<td>Consumer Staples</td>
+<td>Sector ETF</td>
+</tr>
+<tr class="odd">
+<td>XLB</td>
+<td>Materials</td>
+<td>Sector ETF</td>
+</tr>
+</tbody>
+</table>
+<p>Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.</p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
