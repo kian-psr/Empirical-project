@@ -51,7 +51,7 @@ Using these returns, the project generates summary statistics and visual outputs
 
 A natural way to start the comparison of these sectors is to compare their performance over the period. Cumulative returns show how performance evolved over the last 15 years and the percentage increase since the start. This makes it easy to identify sectors with strong long-run results and how even or uneven their performance was. 
 
-![Cumulative returns of SPY and major U.S. sector ETFs, 2010 to 2025.](docs/output/figures/cumulative_returns.png)
+![Cumulative returns of SPY and major U.S. sector ETFs, 2010 to 2025.](output/figures/cumulative_returns.png)
 
 
 ## Conclusion
