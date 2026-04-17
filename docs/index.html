@@ -62,6 +62,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The analysis uses daily adjusted price data for 8 major sector ETFs, as well as for SPY, the benchmark of this analysis. The sample covers a range of 15 years, giving a long time frame that includes both stable periods and some more volatile periods like the covid 19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the <a href="https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs"><strong>State Street SPDR Family</strong></a>. Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.<br>
 </p>
+<p>Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.<br>
+</p>
 <p><strong>The following table gives an overview of what each ticker stands for:</strong></p>
 <table class="caption-top table">
 <thead>
@@ -119,15 +121,25 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.</p>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>This section will present figures and summary statistics and regression results that are made in python.</p>
+<section id="workflow-and-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-and-methodology">Workflow and Methodology</h2>
+<p>The project follows a clear and replicable workflow. Daily price data for SPY and the sector ETFs were first collected and stored as separate raw CSV files. These raw files were then cleaned, combined, and transformed into daily returns, which form the basis of the analysis.<br>
+</p>
+<p>Using these returns, the project generates summary statistics and visual outputs to compare sectors across performance, volatility, and correlation. To extend the analysis beyond descriptive comparisons, I also estimated sector betas relative to SPY as the market benchmark. This creates a transparent workflow that goes from raw data to cleaned data, descriptive evidence, and regression-based measures of market exposure.</p>
 </section>
-<section id="analysis" class="level2">
-<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<p>This section will interpret the results and discuss the differences between sectors in terms of returns, volatility, and sensitivity to the overall market. I will also discuss any interesting patterns or trends that emerge from the data.</p>
+<section id="results-and-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-interpretation">Results and interpretation</h2>
+<section id="long-run-returns" class="level3">
+<h3 class="anchored" data-anchor-id="long-run-returns">Long-run returns</h3>
+<p>A natural way to start the comparison of these sectors is to compare their performance over the period. Cumulative returns show how performance evolved over the last 15 years and the percentage increase since the start. This makes it easy to identify sectors with strong long-run results and how even or uneven their performance was.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/figures/cumulative_returns.png" class="img-fluid figure-img"></p>
+<figcaption>Cumulative returns of SPY and major U.S. sector ETFs, 2010 to 2025.</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
