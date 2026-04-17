@@ -16,7 +16,5 @@ __pycache__/
 # Website and blog output files
 /.quarto/
 **/*.quarto_ipynb
-docs/
-blog_files/
-*.html
+
 
