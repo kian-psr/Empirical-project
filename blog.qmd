@@ -2,6 +2,8 @@
 Title: 'How do equity sectors differ in returns, volatility, and sensitivity to the overall market?'
 Format: html
 output-file: index.html
+resources:
+  - output/figures/*
 ---
 
 # Which U.S. Equity Sectors Really Behaved Differently in the Last Decade and a Half? 
