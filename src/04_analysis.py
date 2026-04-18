@@ -54,6 +54,18 @@ df["Daily Return (Decimal)"] = df["Daily Return (%)"] / 100
 # convert the Date column to datetime format for plotting
 df["Date"] = pd.to_datetime(df["Date"])
 
+# fixed colour map for all charts in the project
+sector_colors = {
+    "SPY": "#000000",  # black benchmark
+    "XLK": "#4E79A7",  # blue
+    "XLE": "#F28E2B",  # orange
+    "XLB": "#5BD64B",  # green
+    "XLY": "#FF0004",  # red
+    "XLV": "#E478C6",  # purple
+    "XLF": "#9C755F",  # brown
+    "XLP": "#FFC800",  # yellow
+    "XLU": "#85E9E1",  # teal
+}
 # sort data again just to make sure its in the right order
 df = df.sort_values(["ticker", "Date"]).reset_index(drop=True)
 
@@ -84,7 +96,7 @@ for ticker in legend_order:
             ticker_data["cumulative return"], 
             label=ticker, 
             linewidth=1.3, 
-            color="black"
+            color=sector_colors[ticker],
         )
     else:
         plt.plot(
@@ -92,7 +104,8 @@ for ticker in legend_order:
             ticker_data["cumulative return"], 
             label=ticker, 
             linewidth=0.8,
-            alpha=0.7
+            alpha=0.7,
+            color=sector_colors[ticker],
         )
     
 plt.title("Cumulative Returns of Sector ETFs & Benchmark (SPY)")
@@ -151,7 +164,7 @@ for ticker in covid_legend_order:
             ticker_data["cumulative return"], 
             label=ticker, 
             linewidth=1.8, 
-            color="black",
+            color=sector_colors[ticker],
             zorder=3  # Ensure SPY is plotted on top of the other lines
         )
 
@@ -162,6 +175,7 @@ for ticker in covid_legend_order:
             label=ticker, 
             linewidth=1.1,
             alpha=0.6,
+            color=sector_colors[ticker],
             zorder=2  # Plot other sectors below SPY
         )
 
