@@ -18,23 +18,23 @@ if "Date" not in df.columns or "Daily Return (%)" not in df.columns:
     raise ValueError("The input file must contain 'Date' and 'Daily Return (%)' columns.")
 
 # Keep only the necessary columns for the regression analysis
-df = df[["Date", "ticker", "Daily Return (%)"]].copy()
+df = df[["Date", "Ticker", "Daily Return (%)"]].copy()
 
 # Convert the Date column to datetime format for plotting
 df["Date"] = pd.to_datetime(df["Date"])
 
 # split the data into a separate dataframe for the market (SPY) and the sectors
-market_df = df[df["ticker"] == "SPY"].copy() # this is the dataframe for the market (SPY)
+market_df = df[df["Ticker"] == "SPY"].copy() # this is the dataframe for the market (SPY)
 market_df = market_df.rename(columns={"Daily Return (%)": "Market Daily Return (%)"}) # rename the column to make it more clear
 
-sectors_df = df[df["ticker"] != "SPY"].copy() # this is the dataframe for the sectors (everything except SPY)
+sectors_df = df[df["Ticker"] != "SPY"].copy() # this is the dataframe for the sectors (everything except SPY)
 
 # create an empty list to store the regression results
 regression_results = []
 
 # Run one regression for each sector etf
-for ticker in sectors_df["ticker"].unique():
-    sector_data = sectors_df[sectors_df["ticker"] == ticker].copy() # get the data for the current sector
+for Ticker in sectors_df["Ticker"].unique():
+    sector_data = sectors_df[sectors_df["Ticker"] == Ticker].copy() # get the data for the current sector
 
     # Merge the sector data with the market data on the Date column to align the returns
     merged_data = pd.merge(sector_data, market_df, on="Date", how="inner")
@@ -49,7 +49,7 @@ for ticker in sectors_df["ticker"].unique():
 
     # Check if we have enough data points for regression (at least 2)
     if len(merged_data) < 2:
-        print(f"Not enough data for {ticker} to perform regression. Skipping.")
+        print(f"Not enough data for {Ticker} to perform regression. Skipping.")
         continue
 
     # Prepare the independent variable (market return) and dependent variable (sector return)
@@ -66,7 +66,7 @@ for ticker in sectors_df["ticker"].unique():
 
     # Store the regression results in a dictionary
     result = {
-        "ticker": ticker,
+        "Ticker": Ticker,
         "alpha": model.params["const"], # this is the intercept (alpha)
         "beta": model.params["Market Daily Return (%)"], # this is the slope (beta)
         "r_squared": model.rsquared, # this is the R-squared value of the regression

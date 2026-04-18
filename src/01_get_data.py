@@ -25,11 +25,11 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 START_DATE = "2010-01-01"
 END_DATE = "2025-12-31"
 
-for ticker in TICKERS:
-    print(f"Downloading data for {ticker} from yfinance...")
+for Ticker in TICKERS:
+    print(f"Downloading data for {Ticker} from yfinance...")
 
     df= yf.download(
-        ticker, 
+        Ticker, 
         start=START_DATE, 
         end=END_DATE,
         interval="1d",  # Daily data
@@ -41,7 +41,7 @@ for ticker in TICKERS:
     )
 # skip if no data is found for the ticker
     if df.empty:
-        print(f"No data found for {ticker}")
+        print(f"No data found for {Ticker}")
         continue
 
 # Flatten the columns as yfinance returns a MultiIndex
@@ -52,9 +52,9 @@ for ticker in TICKERS:
     df.index.name = "Date"
 
 # Save the data to a CSV file in the raw data directory.
-    output_file = RAW_DIR / f"{ticker}.csv"
+    output_file = RAW_DIR / f"{Ticker}.csv"
     df.to_csv(output_file)
 
-    print(f"Saved {ticker} to {output_file}")
+    print(f"Saved {Ticker} to {output_file}")
 
 print("All data downloaded successfully!")

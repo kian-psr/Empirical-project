@@ -21,11 +21,11 @@ if "Date" not in df.columns or "Daily Return (%)" not in df.columns:
     print(f"Error: The input file must contain 'Date' and 'Daily Return (%)' columns.")
 
 #-----------------------------------------------------------------------------------------------------------------
-# 1. Summary statistics table for each sector (ticker)
+# 1. Summary statistics table for each sector (Ticker)
 #-----------------------------------------------------------------------------------------------------------------
 summary_stats = (
-    df.groupby("ticker")["Daily Return (%)"]
-    .agg(["mean", "std", "min", "max", "count"]) # Calculate mean, standard deviation, min, max and count of daily returns for each ticker
+    df.groupby("Ticker")["Daily Return (%)"]
+    .agg(["mean", "std", "min", "max", "count"]) # Calculate mean, standard deviation, min, max and count of daily returns for each Ticker
     .round(3)  # Round the statistics to 3 decimal places for better readability
     .reset_index() 
 )
@@ -67,18 +67,18 @@ sector_colors = {
     "XLU": "#85E9E1",  # teal
 }
 # sort data again just to make sure its in the right order
-df = df.sort_values(["ticker", "Date"]).reset_index(drop=True)
+df = df.sort_values(["Ticker", "Date"]).reset_index(drop=True)
 
-# Calculate the cumulative return for each ticker. Growth if £1 invested
+# Calculate the cumulative return for each Ticker. Growth if £1 invested
 df ["cumulative return"] = (
     (1 + df["Daily Return (Decimal)"])
-    .groupby(df["ticker"])
+    .groupby(df["Ticker"])
     .cumprod() -1
 )
 
 # Get tickers ordered by final cumulative return, highest first
 legend_order = (
-    df.groupby("ticker")["cumulative return"]
+    df.groupby("Ticker")["cumulative return"]
     .last()
     .sort_values(ascending=False)
     .index
@@ -86,26 +86,26 @@ legend_order = (
 # Plot the cumulative return for each sector
 plt.figure(figsize=(12, 7))
 
-for ticker in legend_order:
-    ticker_data = df[df["ticker"] == ticker]
+for Ticker in legend_order:
+    ticker_data = df[df["Ticker"] == Ticker]
     
     # Highlight SPY with a thicker line and different color to make it stand out as the benchmark
-    if ticker == "SPY":
+    if Ticker == "SPY":
         plt.plot(
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
-            label=ticker, 
+            label=Ticker, 
             linewidth=1.3, 
-            color=sector_colors[ticker],
+            color=sector_colors[Ticker],
         )
     else:
         plt.plot(
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
-            label=ticker, 
+            label=Ticker, 
             linewidth=0.8,
             alpha=0.7,
-            color=sector_colors[ticker],
+            color=sector_colors[Ticker],
         )
     
 plt.title("Cumulative Returns of Sector ETFs & Benchmark (SPY)")
@@ -141,30 +141,30 @@ covid_df = df[(df["Date"] >= "2020-01-01") & (df["Date"] <= "2023-12-31")].copy(
 # re-calculate the cumulative return for each ticker during the covid period to 0% begin with at the start of the period
 covid_df["cumulative return"] = (
     (1 + covid_df["Daily Return (Decimal)"])
-    .groupby(covid_df["ticker"])
+    .groupby(covid_df["Ticker"])
     .cumprod() -1
 )
 
 # Get tickers ordered by final cumulative return during the covid period, highest first
 covid_legend_order = (
-    covid_df.groupby("ticker")["cumulative return"]
+    covid_df.groupby("Ticker")["cumulative return"]
     .last()
     .sort_values(ascending=False)
     .index
 )
 # Plot the cumulative return for each sector during the covid period
 fig, ax = plt.subplots(figsize=(13, 7.5))
-for ticker in covid_legend_order:
-    ticker_data = covid_df[covid_df["ticker"] == ticker]
+for Ticker in covid_legend_order:
+    ticker_data = covid_df[covid_df["Ticker"] == Ticker]
     
     # Highlight SPY with a thicker line and different color to make it stand out as the benchmark
-    if ticker == "SPY":
+    if Ticker == "SPY":
         plt.plot(
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
-            label=ticker, 
+            label=Ticker, 
             linewidth=1.8, 
-            color=sector_colors[ticker],
+            color=sector_colors[Ticker],
             zorder=3  # Ensure SPY is plotted on top of the other lines
         )
 
@@ -172,10 +172,10 @@ for ticker in covid_legend_order:
         plt.plot(
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
-            label=ticker, 
+            label=Ticker, 
             linewidth=1.1,
             alpha=0.6,
-            color=sector_colors[ticker],
+            color=sector_colors[Ticker],
             zorder=2  # Plot other sectors below SPY
         )
 
@@ -209,10 +209,10 @@ print("Saved cumulative returns during Covid-19 figure.")
 # This is to calculate the correlation of daily returns between the different sectors and plot it as a heatmap
 
 #keep only the necessary columns for the correlation calculation
-corr_df = df[["ticker", "Date", "Daily Return (%)"]].copy()
+corr_df = df[["Ticker", "Date", "Daily Return (%)"]].copy()
 
 # pivot the data to have tickers as columns and dates as rows, with daily returns as values
-corr_wide = corr_df.pivot(index="Date", columns="ticker", values="Daily Return (%)")
+corr_wide = corr_df.pivot(index="Date", columns="Ticker", values="Daily Return (%)")
 
 # calculate the correlation matrix 
 correlation_matrix = corr_wide.corr().round(3)
@@ -260,10 +260,10 @@ print("Saved correlation heatmap figure.")
 # remove any rows if there are missing values in daily return again just to be sure
 vol_df = df.dropna(subset=["Daily Return (%)"]) 
 
-#calculate the annualized volatility for each ticker and make a table
+#calculate the annualized volatility for each Ticker and make a table
 volatility_table = (
-    vol_df.groupby("ticker")["Daily Return (%)"]
-    .std() * np.sqrt(252) # this calculates the standard deviation of daily returns for each ticker and then annualizes it by multiplying by the square root of 252
+    vol_df.groupby("Ticker")["Daily Return (%)"]
+    .std() * np.sqrt(252) # this calculates the standard deviation of daily returns for each Ticker and then annualizes it by multiplying by the square root of 252
     ).round(3).sort_values(ascending=False).reset_index(name="Annualized Volatility (%)") 
 
 #save the volatility table to a csv file
@@ -273,8 +273,8 @@ print("Saved volatility table.")
 
 # plot the volatility comparison as a bar chart
 plt.figure(figsize=(10, 6))
-colors = ["lightcoral" if ticker == "SPY" else "skyblue" for ticker in volatility_table["ticker"]]
-plt.bar(volatility_table["ticker"], volatility_table["Annualized Volatility (%)"], color=colors)
+colors = ["lightcoral" if Ticker == "SPY" else "skyblue" for Ticker in volatility_table["Ticker"]]
+plt.bar(volatility_table["Ticker"], volatility_table["Annualized Volatility (%)"], color=colors)
 plt.title("Annualized Volatility of Sector ETFs and Benchmark (SPY)") 
 plt.xlabel("Ticker")
 plt.ylabel("Annualized Volatility (%)")

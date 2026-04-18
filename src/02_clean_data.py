@@ -8,7 +8,7 @@ CLEAN_DIR.mkdir(parents=True, exist_ok=True)  # Create the clean directory if it
 
 #convert the ticker names into clear sector names
 
-ticker_to_sector = {
+Ticker_to_sector = {
     "SPY": "Overall Market",
     "XLK": "Technology",
     "XLF": "Financials",
@@ -25,8 +25,8 @@ all_data = []
 
 #loop through each csv file in the raw directory, clean it and save it to the clean directory
 for csv_file in RAW_DIR.glob("*.csv"):
-    ticker = csv_file.stem  # Get the ticker from the file name
-    sector_name = ticker_to_sector.get(ticker, "Unknown Sector")  # Get the sector name from the ticker
+    Ticker = csv_file.stem  # Get the Ticker from the file name
+    sector_name = Ticker_to_sector.get(Ticker, "Unknown Sector")  # Get the sector name from the Ticker
 
     # Read the raw data
     df = pd.read_csv(csv_file)
@@ -50,8 +50,8 @@ for csv_file in RAW_DIR.glob("*.csv"):
     #sort the data by Date in ascending order
     df = df.sort_values("Date")
 
-    # add the ticker and sector name as new columns in the dataframe
-    df["ticker"] = ticker
+    # add the Ticker and sector name as new columns in the dataframe
+    df["Ticker"] = Ticker
     df["sector"] = sector_name
 
     #store the cleaned dataframe in the list
@@ -65,8 +65,8 @@ else:
     # combine all cleaned dataframes into one dataset
     combined_df = pd.concat(all_data, ignore_index=True)
 
-    # sort the final dataset by ticker and Date
-    combined_df = combined_df.sort_values(["ticker", "Date"]).reset_index(drop=True)
+    # sort the final dataset by Ticker and Date
+    combined_df = combined_df.sort_values(["Ticker", "Date"]).reset_index(drop=True)
 
     # save the cleaned dataset into the clean folder
     output_file = CLEAN_DIR / "sector_prices.csv"

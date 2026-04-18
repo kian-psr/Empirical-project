@@ -15,12 +15,12 @@ df = pd.read_csv(INPUT_FILE)
 if "Date" not in df.columns or "Adj Close" not in df.columns:
     print(f"Error: The input file must contain 'Date' and 'Adj Close' columns.")
 
-# Sort by ticker and date just to be sure before calculating returns
-df = df.sort_values(["ticker", "Date"]).reset_index(drop=True)
+# Sort by Ticker and date just to be sure before calculating returns
+df = df.sort_values(["Ticker", "Date"]).reset_index(drop=True)
 
 # Calculate the daily return in percentage
 # The formula for daily return is: (Current Day's Price - Previous Day's Price) / Previous Day's Price * 100
-df["Daily Return (%)"] = df.groupby("ticker")["Adj Close"].pct_change() * 100 # this calculates the percentage change in the Adj Close price for each ticker, which gives us the daily return in percentage and its all seperated by ticker.
+df["Daily Return (%)"] = df.groupby("Ticker")["Adj Close"].pct_change() * 100 # this calculates the percentage change in the Adj Close price for each Ticker, which gives us the daily return in percentage and its all seperated by Ticker.
 df["Daily Return (%)"] = df["Daily Return (%)"].round(3) # this rounds the daily return to 3 decimal places
 
 # Save the results to a new CSV file

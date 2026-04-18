@@ -1,4 +1,4 @@
-ticker,Mean Daily Return (%),Volatility (Std Dev),Worst Daily Return (%),Best Daily Return (%),Total Observations
+Ticker,Mean Daily Return (%),Volatility (Std Dev),Worst Daily Return (%),Best Daily Return (%),Total Observations
 SPY,0.058,1.084,-10.942,10.502,4022
 XLB,0.042,1.311,-11.008,11.76,4022
 XLE,0.038,1.718,-20.141,16.037,4022
