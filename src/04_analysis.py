@@ -117,6 +117,79 @@ plt.close()
 print("Saved cumulative returns figure.")
 
 #-----------------------------------------------------------------------------------------------------------------
+# 2.1 Cumulative return figure for each sector during Covid-19 pandemic
+#-----------------------------------------------------------------------------------------------------------------
+
+# this is to calculate the cumulative return for each sector during the Covid-19 pandemic and plot it over time
+# we will look at data from january 2020 to december 2023 to capture the full period of the pandemic and its aftermath
+
+covid_df = df[(df["Date"] >= "2020-01-01") & (df["Date"] <= "2023-12-31")].copy()
+
+# re-calculate the cumulative return for each ticker during the covid period to 0% begin with at the start of the period
+covid_df["cumulative return"] = (
+    (1 + covid_df["Daily Return (Decimal)"])
+    .groupby(covid_df["ticker"])
+    .cumprod() -1
+)
+
+# Get tickers ordered by final cumulative return during the covid period, highest first
+covid_legend_order = (
+    covid_df.groupby("ticker")["cumulative return"]
+    .last()
+    .sort_values(ascending=False)
+    .index
+)
+# Plot the cumulative return for each sector during the covid period
+fig, ax = plt.subplots(figsize=(13, 7.5))
+for ticker in covid_legend_order:
+    ticker_data = covid_df[covid_df["ticker"] == ticker]
+    
+    # Highlight SPY with a thicker line and different color to make it stand out as the benchmark
+    if ticker == "SPY":
+        plt.plot(
+            ticker_data["Date"], 
+            ticker_data["cumulative return"], 
+            label=ticker, 
+            linewidth=1.8, 
+            color="black",
+            zorder=3  # Ensure SPY is plotted on top of the other lines
+        )
+
+    else:
+        plt.plot(
+            ticker_data["Date"], 
+            ticker_data["cumulative return"], 
+            label=ticker, 
+            linewidth=1.1,
+            alpha=0.6,
+            zorder=2  # Plot other sectors below SPY
+        )
+
+ax.set_title("Cumulative Returns of Sector ETFs & Benchmark (SPY) During Covid-19 Pandemic")
+ax.set_xlabel("Date")
+ax.set_ylabel("Cumulative Return")
+plt.legend()    
+
+ax.yaxis.set_major_formatter(PercentFormatter(1))  # Format y-axis as percentage
+
+# add light horizontal grid lines
+plt.grid(axis="y", linestyle="--", alpha=0.35)
+plt.axhline(0, color="grey", linestyle="--", linewidth=0.8, alpha=0.7)  # Add a horizontal line at 0% to show the break-even point
+
+ax.spines["top"].set_visible(False)  # Remove the top spine for a cleaner look
+ax.spines["right"].set_visible(False)  # Remove the right spine for a cleaner look
+
+# move the legend outside the plot area to the right
+plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))  
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig(OUTPUT_FIGURE / "cumulative_returns_covid.png")
+plt.close()
+
+print("Saved cumulative returns during Covid-19 figure.")
+
+
+#-----------------------------------------------------------------------------------------------------------------
 # 3. Correlation heatmap of daily returns 
 #-----------------------------------------------------------------------------------------------------------------
 # This is to calculate the correlation of daily returns between the different sectors and plot it as a heatmap
