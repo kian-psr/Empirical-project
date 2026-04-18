@@ -64,14 +64,16 @@ Although cumulative return is a useful comparison, it does not show the full pic
 
 ### Volatility
 
-## Conclusion
 
 This section will summarise the main findings and discuss the limits of the analysis.
 
 ```{python}
+#| echo: false
+
 import pandas as pd
 
 df = pd.read_csv("output/tables/summary_statistics.csv") 
-df.to_markdown(index=False)
 df
 ```
+
+## Conclusion
