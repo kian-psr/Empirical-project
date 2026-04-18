@@ -59,6 +59,9 @@ The differences in behaviour became more visible after 2020 and COVID-19. To ana
 
 ![Cumulative returns of SPY and major U.S. sector ETFs during the COVID-19 pandemic.](output/figures/cumulative_returns_covid.png)
 
+One important note is that the cumulative return series here begins in 2020. This means the chart should be read as performance relative to the start of the pandemic period, rather than over the full sample.\
+
+This closer view amplifies the differences that are already visible in the full view. While all sectors suffered from the initial pandemic shock, the scale of decline and the speed of the recovery varied largely. Energy (XLE) experienced the sharpest fall and remained with negative returns for much longer than the rest, it only moved back into positive cumulative return around the beginning of 2020. On the other side, Technology (XLK) recovered much quicker and only had a small drop after the shock. Post-Covid, it produced the strongest performance.  Consumer Discretionary (XLY) also rebounded strongly and remained one of the better-performing sectors throughout the recovery. One of the most interesting patterns I discovered is that, despite suffering the deepest early losses, Energy eventually finished the period with the second-highest cumulative return. Utilities (XLU), in contrast, stayed one of the weakest sectors throughout. It followed a much flatter recovery path and ended the period well below the stronger growth sectors as well as the benchmark.
 
 
 
