@@ -64,10 +64,17 @@ df ["cumulative return"] = (
     .cumprod() -1
 )
 
+# Get tickers ordered by final cumulative return, highest first
+legend_order = (
+    df.groupby("ticker")["cumulative return"]
+    .last()
+    .sort_values(ascending=False)
+    .index
+)
 # Plot the cumulative return for each sector
 plt.figure(figsize=(12, 7))
 
-for ticker in df["ticker"].unique():
+for ticker in legend_order:
     ticker_data = df[df["ticker"] == ticker]
     
     # Highlight SPY with a thicker line and different color to make it stand out as the benchmark
@@ -76,7 +83,7 @@ for ticker in df["ticker"].unique():
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
             label=ticker, 
-            linewidth=1.8, 
+            linewidth=1.3, 
             color="black"
         )
     else:
@@ -84,7 +91,8 @@ for ticker in df["ticker"].unique():
             ticker_data["Date"], 
             ticker_data["cumulative return"], 
             label=ticker, 
-            linewidth=1
+            linewidth=0.8,
+            alpha=0.7
         )
     
 plt.title("Cumulative Returns of Sector ETFs & Benchmark (SPY)")
