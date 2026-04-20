@@ -264,7 +264,7 @@ vol_df = df.dropna(subset=["Daily Return (%)"])
 volatility_table = (
     vol_df.groupby("Ticker")["Daily Return (%)"]
     .std() * np.sqrt(252) # this calculates the standard deviation of daily returns for each Ticker and then annualizes it by multiplying by the square root of 252
-    ).round(3).sort_values(ascending=False).reset_index(name="Annualized Volatility (%)") 
+    ).round(3).sort_values(ascending=False).reset_index(name="Annualised Volatility (%)") 
 
 #save the volatility table to a csv file
 volatility_table.to_csv(OUTPUT_TABLE / "volatility_table.csv", index=False)
@@ -274,10 +274,10 @@ print("Saved volatility table.")
 # plot the volatility comparison as a bar chart
 plt.figure(figsize=(10, 6))
 colors = ["lightcoral" if Ticker == "SPY" else "skyblue" for Ticker in volatility_table["Ticker"]]
-plt.bar(volatility_table["Ticker"], volatility_table["Annualized Volatility (%)"], color=colors)
-plt.title("Annualized Volatility of Sector ETFs and Benchmark (SPY)") 
+plt.bar(volatility_table["Ticker"], volatility_table["Annualised Volatility (%)"], color=colors)
+plt.title("Annualised Volatility of SPY and Major U.S. Sector ETFs") 
 plt.xlabel("Ticker")
-plt.ylabel("Annualized Volatility (%)")
+plt.ylabel("Annualised Volatility (%)")
 plt.xticks(rotation=45)
 plt.grid(axis="y", linestyle="--", alpha=0.35)
 plt.tight_layout()

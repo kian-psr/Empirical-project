@@ -124,6 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<p>Each ticker is the market symbol for an ETF. SPY is included as the benchmark because it tracks the broader U.S. stock market, while the remaining tickers represent major sector ETFs from the same SPDR family, allowing for a more consistent comparison across sectors.</p>
 </section>
 <section id="workflow-and-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="workflow-and-methodology">Workflow and Methodology</h2>
@@ -162,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To understand sector differences more fully, it is useful to compare return and volatility together.</p>
 <section id="summary-statistic-table" class="level4">
 <h4 class="anchored" data-anchor-id="summary-statistic-table">Summary Statistic Table</h4>
-<div id="1c10f187" class="cell" data-execution_count="1">
+<div id="222d56cf" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -268,12 +269,18 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>The summary statistics table shows obvious differences in return, measured here as mean daily return (%) and volatility, as standard deviation. Technology (XLK) has the highest mean daily return at 0.078%, and close second is Consumer Discretionary (XLY) at 0.065%. We identified this trend above as well when we looked at cumulative returns. At the same time, both sectors were relatively volatile, with XLK at 1.369 and XLY at 1.281. In simple terms, a standard deviation of 1.369 suggests that XLK’s daily return was typically about 1.4 percentage points away from its average daily return, indicating a much less stable return pattern. Energy (XLE) stands out the most as it has the worst mean daily return at 0.035%, combined with the highest volatility reported at 1.718 and also the worst single day loss at an impressive -20.141%. This makes Energy the weakest sector in terms of long-run growth and return to risk. By contrast, Consumer Staples (XLP) and Health Care (XLV) show much lower volatility, although this came with more modest average returns. This suggests that these sectors may have offered more stable, but less rewarding, investment profiles over the period.</p>
+</section>
+<section id="volatility-comparison" class="level4">
+<h4 class="anchored" data-anchor-id="volatility-comparison">Volatility Comparison</h4>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="output/figures/return_volatility.png" class="img-fluid figure-img"></p>
-<figcaption>Mean daily return and volatility of SPY and major U.S. sector ETFs, 2010 to 2025.</figcaption>
+<p><img src="output/figures/volatility_comparison.png" class="img-fluid figure-img"></p>
+<figcaption>Volatility Comparison of SPY and Major U.S. Sector ETFs, 2010 to 2025.</figcaption>
 </figure>
 </div>
+<p>Annualised volatility shows how much a sector’s returns typically fluctuate over a year, so a higher value indicates a less stable return pattern. This graph makes the differences in risk even clearer. Energy (XLE) had the highest annualised volatility of more than 27%, which confirms that the ETF was much less stable than the others. Financials (XLF) and Technology (XLK) also had somewhat higher volatility, however this came with a stronger return. SPY, the project benchmark, had an annualised volatility of around 17%, which places it near the middle of the distribution. This suggests that the broader market offered a more balanced risk profile than the most aggressive sector ETFs, while still being less defensive than sectors such as Health Care (XLV) and Consumer Staples (XLP). XLV’s annualised volatility was 16.2, and XLP’s was 13.7. A likely reason why XLP and XLV recorded the lowest volatility is that both are commonly considered defensive sectors, with demand that is less sensitive to changes in the wider economic cycle; people will always need essential consumer goods and health-related services in any economic period. An interesting point to note is that XLV has the second-lowest annualised volatility and standard deviation, yet it finished 3 highest out of the ETFs in terms of cumulative return.<br>
+</p>
+<p>Next, we will examine how sectors moved relative to one another.</p>
 </section>
 </section>
 </section>
