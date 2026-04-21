@@ -163,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To understand sector differences more fully, it is useful to compare return and volatility together.</p>
 <section id="summary-statistic-table" class="level4">
 <h4 class="anchored" data-anchor-id="summary-statistic-table">Summary Statistic Table</h4>
-<div id="2016ff84" class="cell" data-execution_count="1">
+<div id="49178fa0" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -303,6 +303,114 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>The chart confirms several patterns seen above. Technology (XLK) once again stands out, with a beta of 1.168, making it the most sensitive to movements in the overall market. Financials (XLF) ranks second with a beta of 1.108, which is interesting because its cumulative return was much less exceptional than that of XLK or XLY. This suggests that high market sensitivity does not automatically translate into the strongest long-run performance. Energy (XLE), Consumer Discretionary (XLY), and Materials (XLB) also recorded beta values above 1, indicating that these sectors tended to amplify market movements. By comparison, Health Care (XLV), Utilities (XLU), and Consumer Staples (XLP) all had beta values below 1, which supports the earlier view that these sectors behaved more defensively over the sample period. Consumer Staples (XLP) had the lowest beta at 0.584, implying that it was the least exposed to market-wide swings. Overall, the bar chart shows that the sector differences weren’t just about return and volatility, but also about how strongly each sector responded to changes in the market.</p>
+<section id="regression-results" class="level4">
+<h4 class="anchored" data-anchor-id="regression-results">Regression results</h4>
+<div id="16db3559" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Ticker</th>
+<th data-quarto-table-cell-role="th">Alpha</th>
+<th data-quarto-table-cell-role="th">Beta</th>
+<th data-quarto-table-cell-role="th">R²</th>
+<th data-quarto-table-cell-role="th">p-value-alpha</th>
+<th data-quarto-table-cell-role="th">p-value-beta</th>
+<th data-quarto-table-cell-role="th">Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>XLB</td>
+<td>-0.018</td>
+<td>1.040</td>
+<td>0.740</td>
+<td>0.081</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>XLE</td>
+<td>-0.024</td>
+<td>1.078</td>
+<td>0.463</td>
+<td>0.230</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>XLF</td>
+<td>-0.009</td>
+<td>1.108</td>
+<td>0.755</td>
+<td>0.385</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>XLK</td>
+<td>0.010</td>
+<td>1.168</td>
+<td>0.855</td>
+<td>0.226</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>XLP</td>
+<td>0.007</td>
+<td>0.584</td>
+<td>0.537</td>
+<td>0.426</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>XLU</td>
+<td>0.010</td>
+<td>0.598</td>
+<td>0.346</td>
+<td>0.456</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>XLV</td>
+<td>0.007</td>
+<td>0.768</td>
+<td>0.668</td>
+<td>0.438</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>XLY</td>
+<td>0.003</td>
+<td>1.073</td>
+<td>0.824</td>
+<td>0.741</td>
+<td>0.0</td>
+<td>4022</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="conclusion" class="level2">

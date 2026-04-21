@@ -70,9 +70,9 @@ for Ticker in sectors_df["Ticker"].unique():
         "alpha": model.params["const"], # this is the intercept (alpha)
         "beta": model.params["Market Daily Return (%)"], # this is the slope (beta)
         "r_squared": model.rsquared, # this is the R-squared value of the regression
-        "observations": int(model.nobs), # this is the number of observations used in the regression
         "p_value_alpha": model.pvalues["const"], # this is the p-value for alpha
-        "p_value_beta": model.pvalues["Market Daily Return (%)"] # this is the p-value for beta
+        "p_value_beta": model.pvalues["Market Daily Return (%)"], # this is the p-value for beta
+        "observations": int(model.nobs), # this is the number of observations used in the regression
     }
 
     regression_results.append(result)
@@ -100,7 +100,7 @@ regression_df = regression_df.sort_values("beta", ascending=False).reset_index(d
 
 # Make a beta chart
 plt.figure(figsize=(10, 6))
-plt.bar(regression_df["ticker"], regression_df["beta"], color="skyblue") #create a bar chart with the tickers on the x-axis and the beta values on the y-axis
+plt.bar(regression_df["Ticker"], regression_df["beta"], color="skyblue") #create a bar chart with the tickers on the x-axis and the beta values on the y-axis
 
 plt.title("Market Beta for Each Sector ETF")
 plt.xlabel("Sector ETF")
