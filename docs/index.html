@@ -163,109 +163,97 @@ ul.task-list li input[type="checkbox"] {
 <p>To understand sector differences more fully, it is useful to compare return and volatility together.</p>
 <section id="summary-statistic-table" class="level4">
 <h4 class="anchored" data-anchor-id="summary-statistic-table">Summary Statistic Table</h4>
-<div id="49178fa0" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
+<div id="cd5d46d1" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_ea4ff" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Ticker</th>
-<th data-quarto-table-cell-role="th">Mean Daily Return (%)</th>
-<th data-quarto-table-cell-role="th">Volatility (Std Dev)</th>
-<th data-quarto-table-cell-role="th">Worst Daily Return (%)</th>
-<th data-quarto-table-cell-role="th">Best Daily Return (%)</th>
-<th data-quarto-table-cell-role="th">Total Observations</th>
+<th id="T_ea4ff_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Ticker</th>
+<th id="T_ea4ff_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Mean Daily Return (%)</th>
+<th id="T_ea4ff_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Volatility (Std Dev)</th>
+<th id="T_ea4ff_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Worst Daily Return (%)</th>
+<th id="T_ea4ff_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Best Daily Return (%)</th>
+<th id="T_ea4ff_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Total Observations</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>SPY</td>
-<td>0.058</td>
-<td>1.084</td>
-<td>-10.942</td>
-<td>10.502</td>
-<td>4022</td>
+<td id="T_ea4ff_row0_col0" class="data row0 col0">SPY</td>
+<td id="T_ea4ff_row0_col1" class="data row0 col1">0.058000</td>
+<td id="T_ea4ff_row0_col2" class="data row0 col2">1.084000</td>
+<td id="T_ea4ff_row0_col3" class="data row0 col3">-10.942000</td>
+<td id="T_ea4ff_row0_col4" class="data row0 col4">10.502000</td>
+<td id="T_ea4ff_row0_col5" class="data row0 col5">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>XLB</td>
-<td>0.042</td>
-<td>1.311</td>
-<td>-11.008</td>
-<td>11.760</td>
-<td>4022</td>
+<td id="T_ea4ff_row1_col0" class="data row1 col0">XLB</td>
+<td id="T_ea4ff_row1_col1" class="data row1 col1">0.042000</td>
+<td id="T_ea4ff_row1_col2" class="data row1 col2">1.311000</td>
+<td id="T_ea4ff_row1_col3" class="data row1 col3">-11.008000</td>
+<td id="T_ea4ff_row1_col4" class="data row1 col4">11.760000</td>
+<td id="T_ea4ff_row1_col5" class="data row1 col5">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>XLE</td>
-<td>0.038</td>
-<td>1.718</td>
-<td>-20.141</td>
-<td>16.037</td>
-<td>4022</td>
+<td id="T_ea4ff_row2_col0" class="data row2 col0">XLE</td>
+<td id="T_ea4ff_row2_col1" class="data row2 col1">0.038000</td>
+<td id="T_ea4ff_row2_col2" class="data row2 col2">1.718000</td>
+<td id="T_ea4ff_row2_col3" class="data row2 col3">-20.141000</td>
+<td id="T_ea4ff_row2_col4" class="data row2 col4">16.037000</td>
+<td id="T_ea4ff_row2_col5" class="data row2 col5">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>XLF</td>
-<td>0.055</td>
-<td>1.383</td>
-<td>-13.709</td>
-<td>13.157</td>
-<td>4022</td>
+<td id="T_ea4ff_row3_col0" class="data row3 col0">XLF</td>
+<td id="T_ea4ff_row3_col1" class="data row3 col1">0.055000</td>
+<td id="T_ea4ff_row3_col2" class="data row3 col2">1.383000</td>
+<td id="T_ea4ff_row3_col3" class="data row3 col3">-13.709000</td>
+<td id="T_ea4ff_row3_col4" class="data row3 col4">13.157000</td>
+<td id="T_ea4ff_row3_col5" class="data row3 col5">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>XLK</td>
-<td>0.078</td>
-<td>1.369</td>
-<td>-13.814</td>
-<td>13.426</td>
-<td>4022</td>
+<td id="T_ea4ff_row4_col0" class="data row4 col0">XLK</td>
+<td id="T_ea4ff_row4_col1" class="data row4 col1">0.078000</td>
+<td id="T_ea4ff_row4_col2" class="data row4 col2">1.369000</td>
+<td id="T_ea4ff_row4_col3" class="data row4 col3">-13.814000</td>
+<td id="T_ea4ff_row4_col4" class="data row4 col4">13.426000</td>
+<td id="T_ea4ff_row4_col5" class="data row4 col5">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>XLP</td>
-<td>0.041</td>
-<td>0.864</td>
-<td>-9.396</td>
-<td>8.511</td>
-<td>4022</td>
+<td id="T_ea4ff_row5_col0" class="data row5 col0">XLP</td>
+<td id="T_ea4ff_row5_col1" class="data row5 col1">0.041000</td>
+<td id="T_ea4ff_row5_col2" class="data row5 col2">0.864000</td>
+<td id="T_ea4ff_row5_col3" class="data row5 col3">-9.396000</td>
+<td id="T_ea4ff_row5_col4" class="data row5 col4">8.511000</td>
+<td id="T_ea4ff_row5_col5" class="data row5 col5">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>XLU</td>
-<td>0.045</td>
-<td>1.102</td>
-<td>-11.358</td>
-<td>12.793</td>
-<td>4022</td>
+<td id="T_ea4ff_row6_col0" class="data row6 col0">XLU</td>
+<td id="T_ea4ff_row6_col1" class="data row6 col1">0.045000</td>
+<td id="T_ea4ff_row6_col2" class="data row6 col2">1.102000</td>
+<td id="T_ea4ff_row6_col3" class="data row6 col3">-11.358000</td>
+<td id="T_ea4ff_row6_col4" class="data row6 col4">12.793000</td>
+<td id="T_ea4ff_row6_col5" class="data row6 col5">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>XLV</td>
-<td>0.052</td>
-<td>1.019</td>
-<td>-9.861</td>
-<td>7.706</td>
-<td>4022</td>
+<td id="T_ea4ff_row7_col0" class="data row7 col0">XLV</td>
+<td id="T_ea4ff_row7_col1" class="data row7 col1">0.052000</td>
+<td id="T_ea4ff_row7_col2" class="data row7 col2">1.019000</td>
+<td id="T_ea4ff_row7_col3" class="data row7 col3">-9.861000</td>
+<td id="T_ea4ff_row7_col4" class="data row7 col4">7.706000</td>
+<td id="T_ea4ff_row7_col5" class="data row7 col5">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>XLY</td>
-<td>0.065</td>
-<td>1.281</td>
-<td>-12.669</td>
-<td>10.888</td>
-<td>4022</td>
+<td id="T_ea4ff_row8_col0" class="data row8 col0">XLY</td>
+<td id="T_ea4ff_row8_col1" class="data row8 col1">0.065000</td>
+<td id="T_ea4ff_row8_col2" class="data row8 col2">1.281000</td>
+<td id="T_ea4ff_row8_col3" class="data row8 col3">-12.669000</td>
+<td id="T_ea4ff_row8_col4" class="data row8 col4">10.888000</td>
+<td id="T_ea4ff_row8_col5" class="data row8 col5">4022</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 <p>The summary statistics table shows obvious differences in return, measured here as mean daily return (%) and volatility, as standard deviation. Technology (XLK) has the highest mean daily return at 0.078%, and close second is Consumer Discretionary (XLY) at 0.065%. We identified this trend above as well when we looked at cumulative returns. At the same time, both sectors were relatively volatile, with XLK at 1.369 and XLY at 1.281. In simple terms, a standard deviation of 1.369 suggests that XLK’s daily return was typically about 1.4 percentage points away from its average daily return, indicating a much less stable return pattern. Energy (XLE) stands out the most as it has the worst mean daily return at 0.035%, combined with the highest volatility reported at 1.718 and also the worst single day loss at an impressive -20.141%. This makes Energy the weakest sector in terms of long-run growth and return to risk. By contrast, Consumer Staples (XLP) and Health Care (XLV) show much lower volatility, although this came with more modest average returns. This suggests that these sectors may have offered more stable, but less rewarding, investment profiles over the period.</p>
@@ -305,109 +293,98 @@ ul.task-list li input[type="checkbox"] {
 <p>The chart confirms several patterns seen above. Technology (XLK) once again stands out, with a beta of 1.168, making it the most sensitive to movements in the overall market. Financials (XLF) ranks second with a beta of 1.108, which is interesting because its cumulative return was much less exceptional than that of XLK or XLY. This suggests that high market sensitivity does not automatically translate into the strongest long-run performance. Energy (XLE), Consumer Discretionary (XLY), and Materials (XLB) also recorded beta values above 1, indicating that these sectors tended to amplify market movements. By comparison, Health Care (XLV), Utilities (XLU), and Consumer Staples (XLP) all had beta values below 1, which supports the earlier view that these sectors behaved more defensively over the sample period. Consumer Staples (XLP) had the lowest beta at 0.584, implying that it was the least exposed to market-wide swings. Overall, the bar chart shows that the sector differences weren’t just about return and volatility, but also about how strongly each sector responded to changes in the market.</p>
 <section id="regression-results" class="level4">
 <h4 class="anchored" data-anchor-id="regression-results">Regression results</h4>
-<div id="16db3559" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<div id="6e14a7da" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_9fe1d" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Ticker</th>
-<th data-quarto-table-cell-role="th">Alpha</th>
-<th data-quarto-table-cell-role="th">Beta</th>
-<th data-quarto-table-cell-role="th">R²</th>
-<th data-quarto-table-cell-role="th">p-value-alpha</th>
-<th data-quarto-table-cell-role="th">p-value-beta</th>
-<th data-quarto-table-cell-role="th">Observations</th>
+<th id="T_9fe1d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Ticker</th>
+<th id="T_9fe1d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Alpha</th>
+<th id="T_9fe1d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Beta</th>
+<th id="T_9fe1d_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">R²</th>
+<th id="T_9fe1d_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value-alpha</th>
+<th id="T_9fe1d_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">p-value-beta</th>
+<th id="T_9fe1d_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Observations</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>XLB</td>
-<td>-0.018</td>
-<td>1.040</td>
-<td>0.740</td>
-<td>0.081</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row0_col0" class="data row0 col0">XLK</td>
+<td id="T_9fe1d_row0_col1" class="data row0 col1">0.010</td>
+<td id="T_9fe1d_row0_col2" class="data row0 col2">1.168</td>
+<td id="T_9fe1d_row0_col3" class="data row0 col3">0.855</td>
+<td id="T_9fe1d_row0_col4" class="data row0 col4">0.226</td>
+<td id="T_9fe1d_row0_col5" class="data row0 col5">0</td>
+<td id="T_9fe1d_row0_col6" class="data row0 col6">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>XLE</td>
-<td>-0.024</td>
-<td>1.078</td>
-<td>0.463</td>
-<td>0.230</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row1_col0" class="data row1 col0">XLF</td>
+<td id="T_9fe1d_row1_col1" class="data row1 col1">-0.009</td>
+<td id="T_9fe1d_row1_col2" class="data row1 col2">1.108</td>
+<td id="T_9fe1d_row1_col3" class="data row1 col3">0.755</td>
+<td id="T_9fe1d_row1_col4" class="data row1 col4">0.385</td>
+<td id="T_9fe1d_row1_col5" class="data row1 col5">0</td>
+<td id="T_9fe1d_row1_col6" class="data row1 col6">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>XLF</td>
-<td>-0.009</td>
-<td>1.108</td>
-<td>0.755</td>
-<td>0.385</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row2_col0" class="data row2 col0">XLE</td>
+<td id="T_9fe1d_row2_col1" class="data row2 col1">-0.024</td>
+<td id="T_9fe1d_row2_col2" class="data row2 col2">1.078</td>
+<td id="T_9fe1d_row2_col3" class="data row2 col3">0.463</td>
+<td id="T_9fe1d_row2_col4" class="data row2 col4">0.230</td>
+<td id="T_9fe1d_row2_col5" class="data row2 col5">0</td>
+<td id="T_9fe1d_row2_col6" class="data row2 col6">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>XLK</td>
-<td>0.010</td>
-<td>1.168</td>
-<td>0.855</td>
-<td>0.226</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row3_col0" class="data row3 col0">XLY</td>
+<td id="T_9fe1d_row3_col1" class="data row3 col1">0.003</td>
+<td id="T_9fe1d_row3_col2" class="data row3 col2">1.073</td>
+<td id="T_9fe1d_row3_col3" class="data row3 col3">0.824</td>
+<td id="T_9fe1d_row3_col4" class="data row3 col4">0.741</td>
+<td id="T_9fe1d_row3_col5" class="data row3 col5">0</td>
+<td id="T_9fe1d_row3_col6" class="data row3 col6">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>XLP</td>
-<td>0.007</td>
-<td>0.584</td>
-<td>0.537</td>
-<td>0.426</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row4_col0" class="data row4 col0">XLB</td>
+<td id="T_9fe1d_row4_col1" class="data row4 col1">-0.018</td>
+<td id="T_9fe1d_row4_col2" class="data row4 col2">1.040</td>
+<td id="T_9fe1d_row4_col3" class="data row4 col3">0.740</td>
+<td id="T_9fe1d_row4_col4" class="data row4 col4">0.081</td>
+<td id="T_9fe1d_row4_col5" class="data row4 col5">0</td>
+<td id="T_9fe1d_row4_col6" class="data row4 col6">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>XLU</td>
-<td>0.010</td>
-<td>0.598</td>
-<td>0.346</td>
-<td>0.456</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row5_col0" class="data row5 col0">XLV</td>
+<td id="T_9fe1d_row5_col1" class="data row5 col1">0.007</td>
+<td id="T_9fe1d_row5_col2" class="data row5 col2">0.768</td>
+<td id="T_9fe1d_row5_col3" class="data row5 col3">0.668</td>
+<td id="T_9fe1d_row5_col4" class="data row5 col4">0.438</td>
+<td id="T_9fe1d_row5_col5" class="data row5 col5">0</td>
+<td id="T_9fe1d_row5_col6" class="data row5 col6">4022</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>XLV</td>
-<td>0.007</td>
-<td>0.768</td>
-<td>0.668</td>
-<td>0.438</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row6_col0" class="data row6 col0">XLU</td>
+<td id="T_9fe1d_row6_col1" class="data row6 col1">0.010</td>
+<td id="T_9fe1d_row6_col2" class="data row6 col2">0.598</td>
+<td id="T_9fe1d_row6_col3" class="data row6 col3">0.346</td>
+<td id="T_9fe1d_row6_col4" class="data row6 col4">0.456</td>
+<td id="T_9fe1d_row6_col5" class="data row6 col5">0</td>
+<td id="T_9fe1d_row6_col6" class="data row6 col6">4022</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>XLY</td>
-<td>0.003</td>
-<td>1.073</td>
-<td>0.824</td>
-<td>0.741</td>
-<td>0.0</td>
-<td>4022</td>
+<td id="T_9fe1d_row7_col0" class="data row7 col0">XLP</td>
+<td id="T_9fe1d_row7_col1" class="data row7 col1">0.007</td>
+<td id="T_9fe1d_row7_col2" class="data row7 col2">0.584</td>
+<td id="T_9fe1d_row7_col3" class="data row7 col3">0.537</td>
+<td id="T_9fe1d_row7_col4" class="data row7 col4">0.426</td>
+<td id="T_9fe1d_row7_col5" class="data row7 col5">0</td>
+<td id="T_9fe1d_row7_col6" class="data row7 col6">4022</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </section>
