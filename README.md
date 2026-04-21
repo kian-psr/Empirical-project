@@ -14,13 +14,13 @@ In this project i will compare major equity sectors using daily market data and 
 
 ## Repository structure
 
-- data/raw contains original data
-- data/clean contains cleaned datasets
-- docs contains the rendered website files used for GitHub Pages
-- output contains figures and tables
-- report contains the final blog as a Quarto file
-- src means **source code** and contains the main Python scripts used in the project
-- .gitignore tells git what files to ignore, like unnecessary mac files
+- `data/raw` contains original data
+- `data/clean` contains cleaned datasets
+- `docs` contains the rendered website files used for GitHub Pages
+- `output` contains figures and tables
+- `report` contains the final blog as a Quarto file
+- `src means` **source code** and contains the main Python scripts used in the project
+- `.gitignore` tells git what files to ignore, like unnecessary mac files
 
 ## Replication
 
