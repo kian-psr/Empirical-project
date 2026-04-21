@@ -87,8 +87,14 @@ The summary statistics table shows obvious differences in return, measured here 
 
 Annualised volatility shows how much a sector’s returns typically fluctuate over a year, so a higher value indicates a less stable return pattern. This graph makes the differences in risk even clearer. Energy (XLE) had the highest annualised volatility of more than 27%, which confirms that the ETF was much less stable than the others. Financials (XLF) and Technology (XLK) also had somewhat higher volatility, however this came with a stronger return. SPY, the project benchmark, had an annualised volatility of around 17%, which places it near the middle of the distribution. This suggests that the broader market offered a more balanced risk profile than the most aggressive sector ETFs, while still being less defensive than sectors such as Health Care (XLV) and Consumer Staples (XLP). XLV’s annualised volatility was 16.2, and XLP’s was 13.7. A likely reason why XLP and XLV recorded the lowest volatility is that both are commonly considered defensive sectors, with demand that is less sensitive to changes in the wider economic cycle; people will always need essential consumer goods and health-related services in any economic period. An interesting point to note is that XLV has the second-lowest annualised volatility and standard deviation, yet it finished 3 highest out of the ETFs in terms of cumulative return.\
 
-Next, we will examine how sectors moved relative to one another.
+### Correlation and Diversification
 
-###
+Correlation is a useful indicator to look at because it measures how much returns move together between sectors. A higher correlation means two sectors tend to rise and fall in similar ways, a lower correlation suggests that their returns are more distinct and don’t move with each other. This may offer more diversification benefits. 
+
+![Correlation heatmap of daily returns for SPY and major U.S. sector ETFs.](output/figures/correlation_heatmap.png)
+
+The heatmap shows that all sectors were positively correlated with each other, meaning the sector ETFs moved together. The strongest relationships are between the market benchmark (SPY) and Technology (XLK), with a correlation of 0.925, as well as SPY and Consumer Discretionary (XLY) at 0.908. This high correlation means that Consumer Discretionary and Technology moved nearly identically to the market benchmark. This is likely because XLK and XLY make up 35% and 10%, respectively, of the SPY sector allocation. By contrast, Energy (XLE) and Utilities (XLU) recorded the lowest correlation at 0.407, suggesting that they behaved more differently from one another than any other pair of sectors in the sample. As a whole, Energy and Utilities tend to show weaker correlations with the rest of the market, which gives some opportunity for diversification. However, because all correlations remained positive and many were still relatively high, the evidence suggests that sector diversification reduced risk only to a limited extent rather than creating fully independent return patterns.
+
+
 
 ## Conclusion

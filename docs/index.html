@@ -163,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To understand sector differences more fully, it is useful to compare return and volatility together.</p>
 <section id="summary-statistic-table" class="level4">
 <h4 class="anchored" data-anchor-id="summary-statistic-table">Summary Statistic Table</h4>
-<div id="222d56cf" class="cell" data-execution_count="1">
+<div id="8f8ef255" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -280,8 +280,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Annualised volatility shows how much a sector’s returns typically fluctuate over a year, so a higher value indicates a less stable return pattern. This graph makes the differences in risk even clearer. Energy (XLE) had the highest annualised volatility of more than 27%, which confirms that the ETF was much less stable than the others. Financials (XLF) and Technology (XLK) also had somewhat higher volatility, however this came with a stronger return. SPY, the project benchmark, had an annualised volatility of around 17%, which places it near the middle of the distribution. This suggests that the broader market offered a more balanced risk profile than the most aggressive sector ETFs, while still being less defensive than sectors such as Health Care (XLV) and Consumer Staples (XLP). XLV’s annualised volatility was 16.2, and XLP’s was 13.7. A likely reason why XLP and XLV recorded the lowest volatility is that both are commonly considered defensive sectors, with demand that is less sensitive to changes in the wider economic cycle; people will always need essential consumer goods and health-related services in any economic period. An interesting point to note is that XLV has the second-lowest annualised volatility and standard deviation, yet it finished 3 highest out of the ETFs in terms of cumulative return.<br>
 </p>
-<p>Next, we will examine how sectors moved relative to one another.</p>
 </section>
+</section>
+<section id="correlation-and-diversification" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-and-diversification">Correlation and Diversification</h3>
+<p>Correlation is a useful indicator to look at because it measures how much returns move together between sectors. A higher correlation means two sectors tend to rise and fall in similar ways, a lower correlation suggests that their returns are more distinct and don’t move with each other. This may offer more diversification benefits.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/figures/correlation_heatmap.png" class="img-fluid figure-img"></p>
+<figcaption>Correlation heatmap of daily returns for SPY and major U.S. sector ETFs.</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="conclusion" class="level2">
