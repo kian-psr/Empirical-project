@@ -145,4 +145,10 @@ styled = (
 styled
 ``` 
 
+While we already discussed the meaning of beta across the ETFs, it’s also important to understand the full regression and its values shown in the table above. Put simply, this regression creates a formula that uses the daily return of SPY to predict the daily return of each sector ETF, which helps show how sensitive each sector was to broader market movements. This is the formula:
+$$
+R_t = \alpha + \beta R_{SPY,t} + \varepsilon_t
+$$
+Where $R_t$ is the return of the sector ETF on day t, $\alpha$ is the intercept (which can be interpreted as the average return of the sector when the market return is zero), $\beta$ is the slope coefficient (which measures how much the sector’s return changes for a 1% change in the market return), $R_{SPY,t}$ is the return of SPY on day t, and $\varepsilon_t$ is the error term (which captures any other factors affecting the sector’s return that are not explained by SPY).
+
 ## Conclusion
