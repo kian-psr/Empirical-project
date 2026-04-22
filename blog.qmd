@@ -145,10 +145,18 @@ styled = (
 styled
 ``` 
 
-While we already discussed the meaning of beta across the ETFs, it’s also important to understand the full regression and its values shown in the table above. Put simply, this regression creates a formula that uses the daily return of SPY to predict the daily return of each sector ETF, which helps show how sensitive each sector was to broader market movements. This is the formula:
+
+While we already discussed the meaning of beta across the ETFs, it’s also important to understand the full regression and its values shown in the table above. Put simply, this regression creates a formula that uses SPY's daily return to predict each sector ETF's daily return, which helps show how sensitive each sector was to broader market movements. The estimated relationship can be written as:
 $$
-R_t = \alpha + \beta R_{SPY,t} + \varepsilon_t
+R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}
 $$
-Where $R_t$ is the return of the sector ETF on day t, $\alpha$ is the intercept (which can be interpreted as the average return of the sector when the market return is zero), $\beta$ is the slope coefficient (which measures how much the sector’s return changes for a 1% change in the market return), $R_{SPY,t}$ is the return of SPY on day t, and $\varepsilon_t$ is the error term (which captures any other factors affecting the sector’s return that are not explained by SPY).
+where $R_{t,i}$ is the daily return of sector ETF $i$ on day $t$, $\alpha_i$ is the intercept, $\beta_i$ is the slope coefficient, $R_{SPY,t}$ is the daily return of SPY on day $t$, and $\varepsilon_{t,i}$ is the error term, it captures the part of the sector’s return that is not explained by the market benchmark.
+
+In this table, Alpha shows the return that is not explained by the market when SPY’s return is zero, Beta shows how strongly the ETF moved relative to the market, $R^2$ shows how much of the ETF’s return variation was explained by SPY, and the p-values test whether the estimated alpha and beta coefficients are statistically significant. The regression also includes an error term, $\varepsilon_{i,t}$. It does not appear in the results table because it is not a single estimated coefficient, but rather a separate residual for each observation in the sample.
+
+The table gives us 2 more important insights beyond the beta chart. First, all beta coefficients are statistically significant, the p-value-beta is 0 for all ETFs, which means that the relationship between each sector ETF and the market benchmark SPY is a meaningful and reliable predictor of their return. Second, the $R^2$ values differ quite a bit across the sectors. Technology (XLK) and Consumer Discretionary (XLY) have the highest $R^2$ values, at 0.855 and 0.824, which suggests that a large share of their daily return variation was explained by movements in SPY. This is a trend we have seen repeatedly now. Similarly, Utilities (XLU) and Energy (XLE) have much lower $R^2$ values, at 0.346 and 0.463, indicating that their returns were less closely tied to the market and more influenced by sector-specific factors. The alpha estimates are all quite small, and none are statistically significant, since the p-values for alpha remain far higher than normal significance levels. One partial exception is Materials (XLB), where the alpha p-value is 0.081, which may be interpreted as weak evidence at the 10% significance level, but not strong enough to conclude clearly that the sector generated abnormal return beyond market exposure.
+
+The beta chart and regression table reinforce the finding of this blog: U.S. equity sectors did behave differently, not only in their long-run returns and volatility, but also in how closely they were tied to movements in the wider market.
+
 
 ## Conclusion
