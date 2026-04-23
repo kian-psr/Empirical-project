@@ -8,19 +8,19 @@ resources:
 
 # Which U.S. Equity Sectors Really Behaved Differently in the Last Decade and a Half?
 
-Word count: xxxx words
+Word count: 2577 words
 
 ## Introduction
 
-Investors often talk about equity sectors as if their differences are obvious and predictable. Technology is often associated with rapid growth, utilities with stability, and energy with strong cycles. But investing in equity sectors is about more than just identifying which sector has the best return. Considering factors like how volatile sectors are, how they move with each other, and how sensitive they are to movements in the market is equally, if not more important.
+Investors often talk about equity sectors as if their differences are obvious and predictable. Technology is often associated with rapid growth, utilities with stability, and energy with strong cycles. But investing in equity sectors is about more than just identifying which sector has the best return. Considering factors like sector volatility, how sectors move with each other, and how sensitive they are to market movements is equally, if not more, important.
 
-This blog examines whether major U.S. equity sectors really behaved differently over time. Using daily ETF data from 1st of January 2010, to 31st of December 2025, I will look at four main dimensions: long-run returns, volatility, correlation, and market beta. The goal is to understand if any sectors offered any meaningfully different investment profiles over the period, and to see what the trends have been.
+This blog examines whether major U.S. equity sectors really behaved differently over time. Using daily ETF data from $1^{st}$ of January 2010, to $31^{st}$ of December 2025, we will look at four main dimensions: long-run returns, volatility, correlation, and market beta. The goal is to understand if any sectors offered any meaningfully different investment profiles over the period, and to see what the trends have been.
 
 ## Data
 
-The analysis uses daily adjusted price data for 8 major sector ETFs, as well as for SPY, the benchmark of this analysis. The sample covers a the period from the $1^{st}$ of January 2025 to the $31^{st}$ December 2025, giving a long time frame that includes both stable periods and some more volatile periods like the COVID 19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs). Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.\
+The analysis uses daily adjusted price data for 8 major sector ETFs, as well as for SPY, the benchmark of this analysis. The sample covers the period from the $1^{st}$ of January 2010 to the $31^{st}$ December 2025, providing a long time frame that includes both stable and more volatile periods, such as the COVID-19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs). Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.
 
-Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.\
+Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.
 
 **The following table gives an overview of what each ticker stands for:**
 
@@ -48,21 +48,21 @@ Using these returns, the project generates summary statistics and visual outputs
 
 ### Long-run returns
 
-A natural way to start the comparison of these sectors is to compare their performance over the period. Cumulative returns show how performance evolved over the last the full 2010 to 2025 period and the percentage increase since the start. This makes it easy to identify sectors with strong long-run results and how even or uneven their performance was.
+A natural way to start the comparison of these sectors is to compare their performance over the period. Cumulative returns show how performance evolved over the full 2010 to 2025 period and the percentage increase since the start. This makes it easy to identify sectors with strong long-run results and how even or uneven their performance was.
 
 ![Cumulative returns of SPY and major U.S. sector ETFs, 2010 to 2025.](output/figures/cumulative_returns.png)
 
-The figure shows that sector performance differed substantially over time. Technology (XLK) was by far the strongest performer, ending the sample with cumulative returns of more than 1400% and finishing well above all other sectors. Consumer Discretionary (XLY) also performed strongly and outpaced the broader market for most of the period, ending at roughly 900%. SPY, which serves as the benchmark, also delivered strong long-run growth, but remained clearly below the two best-performing sectors. By contrast, Energy (XLE) was the weakest performer. Its returns were much lower than the rest of the sample, only ending with a 190% cumulative return over the period, and it was notably more fragile, with a prolonged period of weakness between 2015 and 2020, even going negative briefly.\
+The figure shows that sector performance differed substantially over time. Technology (XLK) was by far the strongest performer, ending the sample with cumulative returns of more than 1400% and finishing well above all other sectors. Consumer Discretionary (XLY) also performed strongly and outpaced the broader market for most of the period, ending at roughly 900%. SPY, which serves as the benchmark, also delivered strong long-run growth, but remained clearly below the two best-performing sectors. By contrast, Energy (XLE) was the weakest performer. Its returns were much lower than the rest of the sample, only ending with a 190% cumulative return over the period, and it was notably more fragile, with a prolonged period of weakness between 2015 and 2020, even going negative briefly.
 
-The differences in behavior became more visible after 2020 and COVID-19. To analyse this further, the next figure focuses on the Covid period and the aftermath
+The differences in behavior became more visible after 2020 and COVID-19. To analyse this further, the next figure focuses on the COVID period and the aftermath
 
 ![Cumulative returns of SPY and major U.S. sector ETFs during the COVID-19 pandemic.](output/figures/cumulative_returns_covid.png)
 
-One important note is that the cumulative return series here begins in 2020. This means the chart should be read as performance relative to the start of the pandemic period, rather than over the full sample.\
+One important note is that the cumulative return series here begins in 2020. This means the chart should be read as performance relative to the start of the pandemic period, rather than over the full sample.
 
-This closer view amplifies the differences that are already visible in the full view. While all sectors suffered from the initial pandemic shock, the scale of decline and the speed of the recovery varied largely. Energy (XLE) experienced the sharpest fall and remained with negative returns for much longer than the rest, it only moved back into positive cumulative return around the beginning of 2020. On the other side, Technology (XLK) recovered much quicker and only had a small drop after the shock. Post-COVID, it produced the strongest performance. Consumer Discretionary (XLY) also rebounded strongly and remained one of the better-performing sectors throughout the recovery. One of the most interesting patterns I discovered is that, despite suffering the deepest early losses, Energy eventually finished the period with the second-highest cumulative return. Utilities (XLU), in contrast, stayed one of the weakest sectors throughout. It followed a much flatter recovery path and ended the period well below the stronger growth sectors as well as the benchmark.\
+This closer view amplifies the differences that are already visible in the full view. While all sectors suffered from the initial pandemic shock, the scale of decline and the speed of the recovery varied largely. Energy (XLE) experienced the sharpest fall and remained with negative returns for much longer than the rest, it only moved back into positive cumulative return around the beginning of 2020. On the other side, Technology (XLK) recovered much quicker and only had a small drop after the shock. Post-COVID, it produced the strongest performance. Consumer Discretionary (XLY) also rebounded strongly and remained one of the better-performing sectors throughout the recovery. One of the most interesting patterns I discovered is that, despite suffering the deepest early losses, Energy eventually finished the period with the second-highest cumulative return. Utilities (XLU), in contrast, stayed one of the weakest sectors throughout. It followed a much flatter recovery path and ended the period well below the stronger growth sectors as well as the benchmark.
 
-Although cumulative return is a useful comparison, it does not show the full picture. It doesn’t show how much risk investors faced along the way, which is why we will look at volatility next.
+Although cumulative return is a useful comparison, it does not show the full picture. It doesn’t show how much risk investors faced along the way, which is why the next section turns to volatility.
 
 ### Volatility
 
@@ -95,7 +95,9 @@ The summary statistics table shows obvious differences in return, measured here 
 
 ![Volatility Comparison of SPY and Major U.S. Sector ETFs, 2010 to 2025.](output/figures/volatility_comparison.png)
 
-Annualised volatility shows how much a sector’s returns typically fluctuate over a year, so a higher value indicates a less stable return pattern. This graph makes the differences in risk even clearer. Energy (XLE) had the highest annualised volatility of more than 27%, which confirms that the ETF was much less stable than the others. Financials (XLF) and Technology (XLK) also had somewhat higher volatility, however this came with a stronger return. SPY, the project benchmark, had an annualised volatility of around 17%, which places it near the middle of the distribution. This suggests that the broader market offered a more balanced risk profile than the most aggressive sector ETFs, while still being less defensive than sectors such as Health Care (XLV) and Consumer Staples (XLP). XLV’s annualised volatility was 16.2, and XLP’s was 13.7. A likely reason why XLP and XLV recorded the lowest volatility is that both are commonly considered defensive sectors, with demand that is less sensitive to changes in the wider economic cycle; people will always need essential consumer goods and health-related services in any economic period. An interesting point to note is that XLV has the second-lowest annualised volatility and standard deviation, yet it finished 3 highest out of the ETFs in terms of cumulative return.\
+Annualised volatility shows how much a sector’s returns typically fluctuate over a year, so a higher value indicates a less stable return pattern. This graph makes the differences in risk even clearer. Energy (XLE) had the highest annualised volatility of more than 27%, which confirms that the ETF was much less stable than the others. Financials (XLF) and Technology (XLK) also had somewhat higher volatility, however this came with a stronger return. SPY, the project benchmark, had an annualised volatility of around 17%, which places it near the middle of the distribution. This suggests that the broader market offered a more balanced risk profile than the most aggressive sector ETFs, while still being less defensive than sectors such as Health Care (XLV) and Consumer Staples (XLP). XLV’s annualised volatility was 16.2, and XLP’s was 13.7. A likely reason why XLP and XLV recorded the lowest volatility is that both are commonly considered defensive sectors, with demand that is less sensitive to changes in the wider economic cycle; people will always need essential consumer goods and health-related services in any economic period. An interesting point to note is that XLV has the second-lowest annualised volatility and standard deviation, yet it finished 3 highest out of the ETFs in terms of cumulative return.
+
+Return and volatility show that sectors offered different risk-return profiles, but it does not show how they moved together. This is where correlation comes in.
 
 ### Correlation and Diversification
 
@@ -103,7 +105,9 @@ Correlation is a useful indicator to look at because it measures how much return
 
 ![Correlation heatmap of daily returns for SPY and major U.S. sector ETFs.](output/figures/correlation_heatmap.png)
 
-The heatmap shows that all sectors were positively correlated with each other, meaning the sector ETFs moved together. The strongest correlations are between the market benchmark (SPY) and Technology (XLK), at 0.925, and between SPY and Consumer Discretionary (XLY) at 0.908. This high correlation means that Consumer Discretionary and Technology moved nearly identically to the market benchmark. This is likely because XLK and XLY make up 35% and 10%, respectively, of the SPY sector allocation. By contrast, Energy (XLE) and Utilities (XLU) recorded the lowest correlation at 0.407, suggesting that they behaved more differently from one another than any other pair of sectors in the sample. As a whole, Energy and Utilities tend to show weaker correlations with the rest of the market, which gives some opportunity for diversification. However, because all correlations remained positive and many were still relatively high, the evidence suggests that sector diversification reduced risk only to a limited extent rather than creating fully independent return patterns.
+The heatmap shows that all sectors were positively correlated with each other, meaning the sector ETFs moved together. The strongest correlations are between the market benchmark (SPY) and Technology (XLK), at 0.925, and between SPY and Consumer Discretionary (XLY) at 0.908. This high correlation means that Consumer Discretionary and Technology moved nearly identically to the market benchmark. This is likely because XLK and XLY make up 35% and 10%, respectively, of the SPY sector allocation. By contrast, Energy (XLE) and Utilities (XLU) recorded the lowest correlation at 0.407, suggesting that they behaved more differently from one another than any other pair of sectors in the sample. Energy and Utilities tend to show weaker correlations with the rest of the market, which gives some opportunity for diversification. However, because all correlations remained positive and many were still relatively high, the evidence suggests that sector diversification reduced risk only to a limited extent rather than creating fully independent return patterns.
+
+Correlation tells us how closely sectors moved together, but it does not show how strongly each one responded to broader market swings, which is why the next section focuses on market beta.
 
 ### Market beta and market exposure
 
@@ -112,6 +116,8 @@ Market beta measures how sensitive a sector’s returns are to movements in the 
 ![Market beta for each sector ETF relative to SPY.](output/figures/market_beta_chart.png)
 
 The chart confirms several patterns seen above. Technology (XLK) once again stands out, with a beta of 1.168, making it the most sensitive to movements in the overall market. Financials (XLF) ranks second with a beta of 1.108, which is interesting because its cumulative return was much less exceptional than that of XLK or XLY. This suggests that high market sensitivity does not automatically translate into the strongest long-run performance. Energy (XLE), Consumer Discretionary (XLY), and Materials (XLB) also recorded beta values above 1, indicating that these sectors tended to amplify market movements. By comparison, Health Care (XLV), Utilities (XLU), and Consumer Staples (XLP) all had beta values below 1, which supports the earlier view that these sectors behaved more defensively over the sample period. Consumer Staples (XLP) had the lowest beta at 0.584, implying that it was the least exposed to market-wide swings. Overall, the bar chart shows that the sector differences weren’t just about return and volatility, but also about how strongly each sector responded to changes in the market.
+
+This chart gave us a good visual comparison of the beta values, but it does not show the full regression results, which is why I also present the regression table below.
 
 #### Regression results
 ```{python}
@@ -144,7 +150,6 @@ styled = (
 )
 styled
 ``` 
-
 
 While we already discussed the meaning of beta across the ETFs, it’s also important to understand the full regression and its values shown in the table above. Put simply, this regression creates a formula that uses SPY's daily return to predict each sector ETF's daily return, which helps show how sensitive each sector was to broader market movements. The estimated relationship can be written as:
 $$
