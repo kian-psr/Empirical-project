@@ -18,7 +18,7 @@ df = pd.read_csv(CLEAN_DIR / "sector_daily_returns.csv")
 
 # Check if the necessary columns are present
 if "Date" not in df.columns or "Daily Return (%)" not in df.columns:
-    print(f"Error: The input file must contain 'Date' and 'Daily Return (%)' columns.")
+    raise ValueError("The input file must contain 'Date' and 'Daily Return (%)' columns.") # stop the code if the necessary columns are not present to avoid errors in the analysis
 
 #-----------------------------------------------------------------------------------------------------------------
 # 1. Summary statistics table for each sector (Ticker)

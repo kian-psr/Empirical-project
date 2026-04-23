@@ -13,7 +13,7 @@ df = pd.read_csv(INPUT_FILE)
 
 # Check if the necessary columns are present
 if "Date" not in df.columns or "Adj Close" not in df.columns:
-    print(f"Error: The input file must contain 'Date' and 'Adj Close' columns.")
+    raise ValueError("The input file must contain 'Date' and 'Adj Close' columns.") # stop the code if the necessary columns are not present to avoid errors in the analysis
 
 # Sort by Ticker and date just to be sure before calculating returns
 df = df.sort_values(["Ticker", "Date"]).reset_index(drop=True)

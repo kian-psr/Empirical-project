@@ -6,8 +6,12 @@ import numpy as np
 
 # Set file paths again
 CLEAN_DIR = Path("data/clean")
+
 OUTPUT_FIGURE = Path("output/figures")
+OUTPUT_FIGURE.mkdir(parents=True, exist_ok=True) # Create the output/figures directory if it doesn't exist
+
 OUTPUT_TABLE = Path("output/tables")
+OUTPUT_TABLE.mkdir(parents=True, exist_ok=True) # Create the output/tables directory if it doesn't exist
 
 # Read the daily returns data
 input_file = CLEAN_DIR / "sector_daily_returns.csv"

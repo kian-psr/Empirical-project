@@ -8,7 +8,7 @@ CLEAN_DIR.mkdir(parents=True, exist_ok=True)  # Create the clean directory if it
 
 #convert the ticker names into clear sector names
 
-Ticker_to_sector = {
+ticker_to_sector = {
     "SPY": "Overall Market",
     "XLK": "Technology",
     "XLF": "Financials",
@@ -26,7 +26,7 @@ all_data = []
 #loop through each csv file in the raw directory, clean it and save it to the clean directory
 for csv_file in RAW_DIR.glob("*.csv"):
     Ticker = csv_file.stem  # Get the Ticker from the file name
-    sector_name = Ticker_to_sector.get(Ticker, "Unknown Sector")  # Get the sector name from the Ticker
+    sector_name = ticker_to_sector.get(Ticker, "Unknown Sector")  # Get the sector name from the Ticker
 
     # Read the raw data
     df = pd.read_csv(csv_file)
