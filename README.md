@@ -193,9 +193,7 @@ The final written output is the Quarto blog post in `blog.qmd`, published online
 
 The analysis combines descriptive statistics with a simple market model regression:
 
-$
-R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}
-$
+$R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}$
 
 where $R_{t,i}$ is the daily return of sector ETF $i$, and $R_{SPY,t}$ is the daily return of the benchmark ETF SPY. This allows the project to compare not only performance and volatility, but also each sector’s sensitivity to broader market movements.
 
