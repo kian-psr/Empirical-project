@@ -1,49 +1,104 @@
-# Empirical-project
+# Empirical-project: U.S. Equity Sector ETF Analysis
 
-## Project question
+This repository contains my **BEE2041 Empirical Project**, which examines whether major U.S. equity sectors behaved differently over the period 2010 to 2025.
 
-How do equity (ETFs) sectors differ in returns, volatility, and sensitivity (β) to the overall market from 2010 to 2025?
 
-## Blog post
-The Blog is found on my github website under the link:\
-https://kian-psr.github.io/Empirical-project/  
+## Research question
+
+How do major U.S. equity sectors (ETFs) differ over the sample period in terms of cumulative return, volatility, correlation, and sensitivity (β) to the overall market?
+
+## Project Links
+
+Live Blog:  [GitHub Pages site](https://kian-psr.github.io/Empirical-project)
+
+Repository: [Empirical-project](https://github.com/kian-psr/Empirical-project)
 
 ## Project overview
 
-In this project i will compare major equity sectors using daily market data and ETFs. It examines sector performance (return), volatility, correlation, and market sensitivity using Python analysis.
+In this project I will analyse daily adjusted price data for eight major SPDR sector ETFs and SPY in the time frame from the $1^{st}$ of January 2010 to the $31^{st}$ December 2025. The aim is to compare sector behaviour across four dimensions: 
+1. **Long Run Returns**
+2. **Volatility**
+3. **Correlation**
+4. **Market Beta**
+
+The workflow begins by downloading raw ETF price data from Yahoo Finance. These files are then cleaned and combined, transformed into daily returns, and used to generate tables, figures, and regression outputs. The final product is a Quarto blog post published through GitHub Pages.
+
+The modelling component of the project is a market model regression for each sector ETF against SPY.
 
 ## Repository structure
+```text
+Empirical-project
+├── README.md
+├── blog.qmd
+├── .gitignore
+├── data
+│   ├── raw    
+│   └── clean
+├── src
+│   ├── 01_get_data.py
+│   ├── 02_clean_data.py
+│   ├── 03_daily_return_data.py
+│   ├── 04_analysis.py
+│   └── 05_market_beta_regression.py
+├── output
+│   ├── figures    
+│   └── tables    
+└── docs          
+```
 
-- `data/raw` contains original data
-- `data/clean` contains cleaned datasets
-- `docs` contains the rendered website files used for GitHub Pages
-- `output` contains figures and tables
-- `report` contains the final blog as a Quarto file
-- `src means` **source code** and contains the main Python scripts used in the project
-- `.gitignore` tells git what files to ignore, like unnecessary mac files
+- `blog.qmd` contains the final blog as a Quarto file.
+- `.gitignore` tells git what files to ignore, like unnecessary mac files.
+- `data/raw` contains original downloaded CSV files.
+- `data/clean` contains cleaned and transformed datasets.
+- `output` contains figures and tables.
+- `docs` contains the rendered website files used for GitHub Pages.
+
+## Data 
+
+| Ticker | Description | Role |
+|--------|-------------|------|
+| SPY | [State Street® SPDR® S&P 500®](https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy) | Market Benchmark |
+| XLK | [State Street® Technology Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk) | Sector ETF |
+| XLF | [State Street® Financial Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-financial-select-sector-spdr-etf-xlf) |Sector ETF |
+| XLV | [State Street® Health Care Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-health-care-select-sector-spdr-etf-xlv) |Sector ETF |
+| XLE | [State Street® Energy Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-energy-select-sector-spdr-etf-xle) |Sector ETF |
+| XLY | [State Street® Consumer Discretionary Select Sector ](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-discretionary-select-sector-spdr-etf-xly) |Sector ETF |
+| XLU | [State Street® Utilities Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-utilities-select-sector-spdr-etf-xlu) |Sector ETF |
+| XLP | [State Street® Consumer Staples Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-staples-select-sector-spdr-etf-xlp) |Sector ETF |
+| XLB | [State Street® Materials Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-materials-select-sector-spdr-etf-xlb) |Sector ETF |
+
+Source: **Yahoo Finance**, downloaded using `yfinance`.
+
+Sample period: 2010-01-01 to 2025-12-31.
+
 
 ## Replication
 
-To reproduce this project, run the python script in the `src` folder in order from `01` to `05`
+To reproduce this project you will need:
 
+- Python 3
+- Quarto
+
+And the following packages 
 ### Required Packages:
 
 This Project uses exclusively Python and the following libraries:
 
 - ***pandas***:
-  - Used for cleaning, reading, and combining the data
+  - Used for cleaning, reading, and combining the data.
 - ***numpy***:
-  - Used for numerical calculations
+  - Used for numerical calculations.
 - ***matplotlib***:
-  - Used for creating charts and figures for visualisation
+  - Used for creating charts and figures for visualisation.
 - ***yfinance***:
-  - Open source program used to download the financial data from Yahoo Finance
+  - Open source program used to download the financial data from Yahoo Finance.
 - ***statsmodels***:
-  - Used for the stats model and the regression
+  - Used for the stats model and the regression.
 
-You can install them with the following command line:\
-`python3 -m pip install pandas numpy matplotlib yfinance statsmodels`
-
+You can install them with the following command line:
+``` bash
+python3 -m pip install pandas numpy matplotlib yfinance statsmodels
+```
 ### Flowchart of actions
 
 ```mermaid
@@ -69,69 +124,114 @@ This script downloads daily ETF and benchmark price data from Yahoo Finance usin
 
 2.  `src/02_clean_data.py`
 
-This script reads the raw ETF data and cleans it by:\
-- keeping required price columns 
-- removes lines with missing data 
-- sort the data by date and tickers
-- adds ticker & sector labels 
-- saves data to `data/clean/sector_prices.csv`
+This script reads the raw ETF data and cleans it by:
+
+- keeping required price columns.
+- removes lines with missing data. 
+- sort the data by date and tickers.
+- adds ticker & sector labels. 
+- saves data to `data/clean/sector_prices.csv`.
 
 3.  `src/03_daily_return_data.py`
 
-This script calculates daily percentage returns for each ETF using the cleaned data. The output is saved to `data/clean/sector_daily_returns.csv`
+This script calculates daily percentage returns for each ETF using the cleaned data. The output is saved to `data/clean/sector_daily_returns.csv`.
 
 4.  `src/04_analysis.py`
 
-Produces the descriptive outputs and visualsation used in the project:\
-- Summary statistics 
-- Cumulative return figure 
-- Volatility comparison 
-- Correlation heat-map 
-- These are saved in `output/tables` and `output/figures`
+Produces the descriptive outputs and visualsation used in the project:
+
+- Summary statistics.
+- Cumulative return figure.
+- Volatility comparison.
+- Correlation heat-map.
+- These are saved in `output/tables` and `output/figures`.
 
 5.  `src/05_market_beta_regression.py`
 
-This script runs a market model regression for each sector ETF using SPY as the market benchmark It saves the regression results table and the market beta figure in `output/tables` and `output/figures`
+This script runs a market model regression for each sector ETF using SPY as the market benchmark. It saves the regression results table and the market beta figure in `output/tables` and `output/figures`.
 
 ### Run Order
 
-To get the project replicated you have to run the script in this order:
+To get the project replicated you have to run the script in the following order:
 
-`python3 src/01_get_data.py`\
-`python3 src/02_clean_data.py`\
-`python3 src/03_daily_return_data.py`\
-`python3 src/04_analysis.py`\
-`python3 src/05_market_beta_regression.py`
+```bash
+python3 src/01_get_data.py
+python3 src/02_clean_data.py
+python3 src/03_daily_return_data.py
+python3 src/04_analysis.py
+python3 src/05_market_beta_regression.py
+```
+### Rebuild the website
+After generating the outputs, render the Quarto blog with:
+
+```bash
+quarto render blog.qmd --to html --output index.html --output-dir docs
+```
 
 ## Output
 
-The final project outputs are stored in `output/figures` for figures in .png format and `output/tables` for tables in .csv format.\
-The final report is available on the GitHub Pages website linked above.
+The project generates the following outputs.
 
+### Figures
+- `cumulative_returns.png`
+- `cumulative_returns_covid.png`
+- `volatility_comparison.png`
+- `correlation_heatmap.png`
+- `market_beta_chart.png`
+
+### Tables
+- `summary_statistics.csv`
+- `volatility_table.csv`
+- `correlation_matrix.csv`
+- `market_beta_regression_results.csv`
+
+The final written output is the Quarto blog post in `blog.qmd`, published online through GitHub Pages.
 
 ## Notes
 
-#### Data Range
+### Methods Note
 
-This project uses daily ETF data from 2010-01-01 to 2025-12-31\
-This gives a wide range of historical data that provides a good  amount of data points for analysis, while also being recent enough.
+The analysis combines descriptive statistics with a simple market model regression:
 
-#### Source of ETFs
+$
+R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}
+$
+
+where $R_{t,i}$ is the daily return of sector ETF $i$, and $R_{SPY,t}$ is the daily return of the benchmark ETF SPY. This allows the project to compare not only performance and volatility, but also each sector’s sensitivity to broader market movements.
+
+### Source of ETFs
 
 - All ETFs come from [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs) to keep the sample consistent
 - They are all U.S. based because the project uses SPY as a benchmark
 - It keeps the analysis consistent as SPY is consistently used as a benchmark across different analysis
 
-#### The tickers represent the following:
+### What each ETF represents
 
-| Ticker | Full name & Link |
-|------------|------------------------------------------------------------|
-| SPY | [State Street® SPDR® S&P 500®](https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy) |
-| XLK | [State Street® Technology Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk) |
-| XLF | [State Street® Financial Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-financial-select-sector-spdr-etf-xlf) |
-| XLV | [State Street® Health Care Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-health-care-select-sector-spdr-etf-xlv) |
-| XLE | [State Street® Energy Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-energy-select-sector-spdr-etf-xle) |
-| XLY | [State Street® Consumer Discretionary Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-discretionary-select-sector-spdr-etf-xly) |
-| XLU | [State Street® Utilities Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-utilities-select-sector-spdr-etf-xlu) |
-| XLP | [State Street® Consumer Staples Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-consumer-staples-select-sector-spdr-etf-xlp) |
-| XLB | [State Street® Materials Select Sector](https://www.ssga.com/us/en/intermediary/etfs/state-street-materials-select-sector-spdr-etf-xlb) |
+#### SPY:
+SPY is the benchmark ETF in this project. It tracks the S&P 500, so it represents a broad basket of large cap U.S. companies across all eleven GICS sectors. In this analysis, it is used as a proxy for the overall U.S. equity market.
+
+#### XLK, Technology:
+XLK tracks the technology sector of the S&P 500. It includes large U.S. technology firms, such as companies involved in software, hardware, semiconductors, IT services, and related technology activities.
+
+#### XLF, Financials:
+XLF tracks the financial sector of the S&P 500. It includes companies in financial services, insurance, banks, capital markets, mortgage REITs, and consumer finance.
+
+#### XLV, Health Care:
+XLV tracks the health care sector of the S&P 500. It includes firms in pharmaceuticals, biotechnology, health care equipment and supplies, health care providers and services, life sciences tools, and health care technology.
+
+#### XLE, Energy
+XLE tracks the energy sector of the S&P 500. It includes companies involved in oil, gas and consumable fuels, as well as energy equipment and services.
+
+#### XLY, Consumer Discretionary
+XLY tracks the consumer discretionary sector of the S&P 500. It includes companies whose products and services are generally linked to non essential consumer spending, such as retail, hotels, restaurants, leisure, apparel, automobiles, and household durables.
+
+#### XLU, Utilities:
+XLU tracks the utilities sector of the S&P 500. It includes companies involved in electric utilities, water utilities, gas utilities, multi utilities, and independent power and renewable electricity production.
+
+#### XLP, Consumer Staples:
+XLP tracks the consumer staples sector of the S&P 500. It includes companies that produce or sell essential everyday goods, such as food, beverages, household products, tobacco, personal care products, and staples retail.
+
+#### XLB, Materials:
+XLB tracks the materials sector of the S&P 500. It includes firms in chemicals, metals and mining, paper and forest products, containers and packaging, and construction materials.
+
+***Using SPY alongside Select Sector SPDR ETFs allows the project to compare sector specific behaviour against a consistent broad market benchmark***
