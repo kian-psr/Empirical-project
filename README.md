@@ -115,11 +115,12 @@ flowchart LR
     D --> E(Calculate Daily Returns)
     E --> F[Run Analysis]
     F --> G("cumulative_returns.png")
-    F --> H("correlation_heatmap.png")
-    F --> I("volatility_table.csv")
-    F --> J("volatility_comparison.png")
-    F --> K("market_beta_regression_results.csv")
-    F --> L("market_beta_chart.png")
+    F --> H(cumulative_returns_covid.png)
+    F --> I("correlation_heatmap.png")
+    F --> J("volatility_table.csv")
+    F --> K("volatility_comparison.png")
+    F --> L("market_beta_regression_results.csv")
+    F --> M("market_beta_chart.png")
 ```
 
 ### Project Workflow
