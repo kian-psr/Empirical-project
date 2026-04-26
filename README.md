@@ -28,30 +28,34 @@ The modelling component of the project is a market model regression for each sec
 ## Repository structure
 ```text
 Empirical-project
-├── README.md
-├── blog.qmd
-├── .gitignore
 ├── data
 │   ├── raw    
 │   └── clean
+├── docs 
+├── output
+│   ├── figures    
+│   └── tables  
 ├── src
 │   ├── 01_get_data.py
 │   ├── 02_clean_data.py
 │   ├── 03_daily_return_data.py
 │   ├── 04_analysis.py
-│   └── 05_market_beta_regression.py
-├── output
-│   ├── figures    
-│   └── tables    
-└── docs          
+|   └── 05_market_beta_regression.py
+├── .gitignore
+├── blog.qmd
+├── README.md
+└── run_all.py     
 ```
 
-- `blog.qmd` contains the final blog as a Quarto file.
-- `.gitignore` tells git what files to ignore, like unnecessary mac files.
 - `data/raw` contains original downloaded CSV files.
 - `data/clean` contains cleaned and transformed datasets.
-- `output` contains figures and tables.
 - `docs` contains the rendered website files used for GitHub Pages.
+- `output` contains figures and tables.
+- `src` contains all the scripts for the project 
+- `.gitignore` tells git what files to ignore, like unnecessary mac files.
+- `blog.qmd` contains the final blog as a Quarto file.
+- `README.md` is this section
+- `run_all.py` runs all scripts at once so it is easier to reproduce
 
 ## Data 
 
@@ -118,6 +122,8 @@ flowchart LR
 
 ### Project Workflow
 
+The script `run_all.py` is included to automate the full pipeline. It runs each source script in the correct order, from data download to final regression outputs.
+
 1.  `src/01_get_data.py`
 
 This script downloads daily ETF and benchmark price data from Yahoo Finance using `yfinance`.
@@ -152,7 +158,11 @@ This script runs a market model regression for each sector ETF using SPY as the 
 
 ### Run Order
 
-To get the project replicated you have to run the script in the following order:
+The full data pipeline can be reproduced from the project root using:
+
+`python3 run_all.py`
+
+Alternatively, each script can be run manually in the following order:
 
 ```bash
 python3 src/01_get_data.py
@@ -161,6 +171,7 @@ python3 src/03_daily_return_data.py
 python3 src/04_analysis.py
 python3 src/05_market_beta_regression.py
 ```
+
 ### Rebuild the website
 After generating the outputs, render the Quarto blog with:
 
