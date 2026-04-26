@@ -20,7 +20,7 @@ ticker_to_sector = {
     "XLB": "Materials"
 }   
 
-# create an empty list to store the cleaned dataframes§
+# create an empty list to store the cleaned dataframes
 all_data = []
 
 #loop through each csv file in the raw directory, clean it and save it to the clean directory
@@ -52,7 +52,7 @@ for csv_file in RAW_DIR.glob("*.csv"):
 
     # add the Ticker and sector name as new columns in the dataframe
     df["Ticker"] = Ticker
-    df["sector"] = sector_name
+    df["Sector"] = sector_name
 
     #store the cleaned dataframe in the list
     all_data.append(df)
