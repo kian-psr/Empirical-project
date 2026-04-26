@@ -22,14 +22,17 @@ if "Date" not in df.columns or "Daily Return (%)" not in df.columns:
     raise ValueError("The input file must contain 'Date' and 'Daily Return (%)' columns.")
 
 # Keep only the necessary columns for the regression analysis
-df = df[["Date", "Ticker", "Daily Return (%)"]].copy()
+df = df[["Date", "Ticker", "Sector", "Daily Return (%)"]].copy()
 
 # Convert the Date column to datetime format for plotting
 df["Date"] = pd.to_datetime(df["Date"])
 
 # split the data into a separate dataframe for the market (SPY) and the sectors
-market_df = df[df["Ticker"] == "SPY"].copy() # this is the dataframe for the market (SPY)
-market_df = market_df.rename(columns={"Daily Return (%)": "Market Daily Return (%)"}) # rename the column to make it more clear
+market_df = df[df["Ticker"] == "SPY"].copy()
+market_df = market_df.rename(columns={"Daily Return (%)": "Market Daily Return (%)"})
+
+# Keep only Date and market return so the merge does not create duplicate Ticker or Sector columns
+market_df = market_df[["Date", "Market Daily Return (%)"]]
 
 sectors_df = df[df["Ticker"] != "SPY"].copy() # this is the dataframe for the sectors (everything except SPY)
 
@@ -39,6 +42,7 @@ regression_results = []
 # Run one regression for each sector etf
 for Ticker in sectors_df["Ticker"].unique():
     sector_data = sectors_df[sectors_df["Ticker"] == Ticker].copy() # get the data for the current sector
+    sector_name = sector_data["Sector"].iloc[0] # get the sector name for the current sector (we can take the first value since it's the same for all rows of that sector)
 
     # Merge the sector data with the market data on the Date column to align the returns
     merged_data = pd.merge(sector_data, market_df, on="Date", how="inner")
@@ -70,6 +74,7 @@ for Ticker in sectors_df["Ticker"].unique():
 
     # Store the regression results in a dictionary
     result = {
+        "Sector": sector_name,
         "Ticker": Ticker,
         "alpha": model.params["const"], # this is the intercept (alpha)
         "beta": model.params["Market Daily Return (%)"], # this is the slope (beta)
@@ -103,11 +108,11 @@ print(f"Market beta regression results saved to {OUTPUT_TABLE / 'market_beta_reg
 regression_df = regression_df.sort_values("beta", ascending=False).reset_index(drop=True)
 
 # Make a beta chart
-plt.figure(figsize=(10, 6))
-plt.bar(regression_df["Ticker"], regression_df["beta"], color="skyblue") #create a bar chart with the tickers on the x-axis and the beta values on the y-axis
+plt.figure(figsize=(12, 6))
+plt.bar(regression_df["Sector"], regression_df["beta"], color="skyblue") #create a bar chart with the tickers on the x-axis and the beta values on the y-axis
 
 plt.title("Market Beta for Each Sector ETF")
-plt.xlabel("Sector ETF")
+plt.xlabel("Sector")
 plt.ylabel("Beta")
 plt.grid(axis="y", linestyle="--", alpha=0.35)
 plt.axhline(1, color="red", linestyle="--", label="Market Beta = 1") # add a horizontal line at beta = 1 to show the market beta

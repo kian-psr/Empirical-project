@@ -1,10 +1,10 @@
-Ticker,Annualised Volatility (%)
-XLE,27.268
-XLF,21.959
-XLK,21.734
-XLB,20.813
-XLY,20.341
-XLU,17.493
-SPY,17.211
-XLV,16.169
-XLP,13.713
+Sector,Ticker,Annualised Volatility (%)
+Energy,XLE,27.268
+Financials,XLF,21.959
+Technology,XLK,21.734
+Materials,XLB,20.813
+Consumer Discretionary,XLY,20.341
+Utilities,XLU,17.493
+Overall Market,SPY,17.211
+Health Care,XLV,16.169
+Consumer Staples,XLP,13.713
