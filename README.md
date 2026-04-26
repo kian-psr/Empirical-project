@@ -173,6 +173,9 @@ python3 src/03_daily_return_data.py
 python3 src/04_analysis.py
 python3 src/05_market_beta_regression.py
 ```
+#### Note on re-running the data download
+
+The project includes the raw ETF price files in `data/raw`, so the analysis can be replicated from the submitted dataset. If `src/01_get_data.py` is run again, the raw CSV files may change slightly because yfinance can update adjusted prices over time, for example due to dividend or price adjustment revisions. As a result, some numerical values in the raw data, cleaned data, and output tables may differ very slightly from the committed version.
 
 ### Rebuild the website
 After generating the outputs, render the Quarto blog with:
