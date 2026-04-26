@@ -96,7 +96,7 @@ legend_order = (
     .index
 )
 # Plot the cumulative return for each sector
-plt.figure(figsize=(12, 7))
+plt.figure(figsize=(14, 8))
 
 for Ticker in legend_order:
     ticker_data = df[df["Ticker"] == Ticker]
@@ -137,7 +137,7 @@ plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))
 plt.xticks(rotation=45)
 plt.tight_layout()
 
-plt.savefig(OUTPUT_FIGURE / "cumulative_returns.png")
+plt.savefig(OUTPUT_FIGURE / "cumulative_returns.png",dpi=300, bbox_inches="tight")
 plt.close()
 
 print("Saved cumulative returns figure.")
@@ -166,7 +166,7 @@ covid_legend_order = (
     .index
 )
 # Plot the cumulative return for each sector during the covid period
-fig, ax = plt.subplots(figsize=(13, 7.5))
+fig, ax = plt.subplots(figsize=(14, 8))
 
 for Ticker in covid_legend_order:
     ticker_data = covid_df[covid_df["Ticker"] == Ticker]
@@ -212,7 +212,7 @@ ax.spines["right"].set_visible(False)  # Remove the right spine for a cleaner lo
 plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))  
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig(OUTPUT_FIGURE / "cumulative_returns_covid.png")
+plt.savefig(OUTPUT_FIGURE / "cumulative_returns_covid.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 print("Saved cumulative returns during Covid-19 figure.")
@@ -244,7 +244,7 @@ correlation_matrix.to_csv(OUTPUT_TABLE / "correlation_matrix.csv")
 print("Saved correlation matrix table.")
 
 # plot the correlation matrix as a heatmap
-plt.figure(figsize=(12, 9))
+plt.figure(figsize=(13, 11))
 plt.imshow(correlation_matrix, cmap="coolwarm", vmin=-1, vmax=1)
 plt.colorbar(label="Correlation Coefficient")
 plt.xticks(ticks=np.arange(len(correlation_matrix.columns)), labels=correlation_matrix.columns, rotation=45)
@@ -266,7 +266,7 @@ for i in range(len(correlation_matrix.index)):
 plt.title("Correlation Heatmap of Daily Returns")
 plt.tight_layout()
 
-plt.savefig(OUTPUT_FIGURE / "correlation_heatmap.png")
+plt.savefig(OUTPUT_FIGURE / "correlation_heatmap.png", dpi=300, bbox_inches="tight")
 plt.close() 
 
 print("Saved correlation heatmap figure.")
@@ -294,7 +294,7 @@ volatility_table.to_csv(OUTPUT_TABLE / "volatility_table.csv", index=False)
 print("Saved volatility table.")
 
 # plot the volatility comparison as a bar chart
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(14, 7))
 colors = ["lightcoral" if Ticker == "SPY" else "skyblue" for Ticker in volatility_table["Ticker"]]
 
 plt.bar(
@@ -311,7 +311,7 @@ plt.xticks(rotation=45)
 plt.grid(axis="y", linestyle="--", alpha=0.35)
 plt.tight_layout()
 
-plt.savefig(OUTPUT_FIGURE / "volatility_comparison.png")
+plt.savefig(OUTPUT_FIGURE / "volatility_comparison.png",dpi=300, bbox_inches="tight")
 plt.close()
 
 print("Saved volatility comparison figure.")

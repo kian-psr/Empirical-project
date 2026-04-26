@@ -108,10 +108,10 @@ print(f"Market beta regression results saved to {OUTPUT_TABLE / 'market_beta_reg
 regression_df = regression_df.sort_values("beta", ascending=False).reset_index(drop=True)
 
 # Make a beta chart
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(14, 7))
 plt.bar(regression_df["Sector"], regression_df["beta"], color="skyblue") #create a bar chart with the tickers on the x-axis and the beta values on the y-axis
 
-plt.title("Market Beta for Each Sector ETF")
+plt.title("Market Beta for Each U.S. Equity Sector")
 plt.xlabel("Sector")
 plt.ylabel("Beta")
 plt.grid(axis="y", linestyle="--", alpha=0.35)
@@ -120,6 +120,6 @@ plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()
 
-plt.savefig(OUTPUT_FIGURE / "market_beta_chart.png")
+plt.savefig(OUTPUT_FIGURE / "market_beta_chart.png", dpi=300, bbox_inches="tight")
 plt.close()
 print(f"Market beta chart saved to {OUTPUT_FIGURE / 'market_beta_chart.png'}")
