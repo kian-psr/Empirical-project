@@ -18,7 +18,7 @@ This blog examines whether major U.S. equity sectors really behaved differently 
 
 ## Data
 
-The analysis uses daily adjusted price data for 8 major sector ETFs and the SPY, the benchmark of this analysis. The sample covers the period from the $1^{st}$ of January 2010 to the $31^{st}$ of December 2025, providing a long time frame that includes both stable and more volatile periods, such as the COVID-19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs). Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.
+The analysis uses daily adjusted price data for eight major sector ETFs and the SPY, the benchmark of this analysis. The sample covers the period from the $1^{st}$ of January 2010 to the $31^{st}$ of December 2025, providing a long time frame that includes both stable and more volatile periods, such as the COVID-19 pandemic. To keep the comparison consistent, all the ETFs are sourced from the [**State Street SPDR Family**](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/sector-and-industry-etfs). Therefore, each ETF represents a specific part of the U.S. equity market within the same general fund structure.
 
 Daily adjusted prices are converted into returns and then used to compare sectors across the four dimensions mentioned. This allows the analysis to go beyond simple return comparisons and examine whether sectors offered meaningfully different investment profiles over time.
 
@@ -40,7 +40,7 @@ Each ticker is the market symbol for an ETF. SPY is included as the benchmark be
 
 ## Workflow and Methodology
 
-The project follows a clear and replicable workflow. . Daily data for the SPY and the sector ETFs were first collected and stored as separate raw CSV files. These raw files were then cleaned, combined, and transformed into daily returns, which form the basis of the analysis.\
+The project follows a clear and replicable workflow. Daily data for the SPY and the sector ETFs were first collected and stored as separate raw CSV files. These raw files were then cleaned, combined, and transformed into daily returns, which form the basis of the analysis.\
 
 Using these returns, the project generates summary statistics and visual outputs to compare sectors across performance, volatility, and correlation. To extend the analysis beyond descriptive comparisons, I also estimated sector betas relative to SPY. This creates a transparent workflow that goes from raw data to cleaned data and to relevant visual and statistical outputs.
 
@@ -89,7 +89,7 @@ styled = (df.style
 styled
 ```
 
-The summary statistics table shows obvious differences in return, measured here as mean daily return (%) and volatility, as standard deviation. Technology (XLK) has the highest mean daily return at 0.078%, and close second is Consumer Discretionary (XLY) at 0.065%. We identified this trend above as well when we looked at cumulative returns. At the same time, both sectors were relatively volatile, with XLK at 1.369 and XLY at 1.281. In simple terms, a standard deviation of 1.369 suggests that XLK’s daily return was typically about 1.4 percentage points away from its average daily return, indicating a less stable return pattern. Energy (XLE) stands out the most as it has the worst mean daily return at 0.035%, combined with the highest volatility reported at 1.718 and also the worst single day loss at an impressive -20.141%. This makes Energy the weakest sector in terms of long-run growth and return to risk. By contrast, Consumer Staples (XLP) and Health Care (XLV) show much lower volatility, although this came with more modest average returns. This suggests that these sectors may have offered more stable, but less rewarding, investment profiles over the period.
+The summary statistics table shows obvious differences in return, measured here as mean daily return (%) and volatility, as standard deviation. Technology (XLK) has the highest mean daily return at 0.078%, and close second is Consumer Discretionary (XLY) at 0.065%. We identified this trend above as well when we looked at cumulative returns. At the same time, both sectors were relatively volatile, with XLK at 1.369 and XLY at 1.281. In simple terms, a standard deviation of 1.369 suggests that XLK’s daily return was typically about 1.4 percentage points away from its average daily return, indicating a less stable return pattern. Energy (XLE) stands out the most as it has the lowest mean daily return at 0.038%, combined with the highest volatility reported at 1.718 and also the worst single day loss at an impressive -20.141%. This makes Energy the weakest sector in terms of long-run growth and return to risk. By contrast, Consumer Staples (XLP) and Health Care (XLV) show much lower volatility, although this came with more modest average returns. This suggests that these sectors may have offered more stable, but less rewarding, investment profiles over the period.
 
 #### Volatility Comparison
 
@@ -101,17 +101,17 @@ Return and volatility show that sectors offered different risk-return profiles, 
 
 ### Correlation and Diversification
 
-Correlation is a useful indicator to look at because it measures how much returns move together between sectors. A higher correlation means two sectors tend to rise and fall in similar ways, a lower correlation suggests that their returns are more distinct and don’t move with each other. This may offer more diversification benefits. 
+Correlation is a useful indicator to look at because it measures how much returns move together between sectors. A higher correlation means two sectors tend to rise and fall in similar ways, a lower correlation suggests that their returns are more distinct and don’t move with each other. This may offer more diversification benefits.
 
-![Correlation heatmap of daily returns for U.S. equity sectors and the Overall Market benchmark.](output/figures/correlation_heatmap.png){width="100%"}
+![Correlation Heatmap of daily returns for U.S. equity sectors and the Overall Market benchmark.](output/figures/correlation_heatmap.png){width="100%"}
 
-The heatmap shows that all sectors were positively correlated with each other, meaning the sector ETFs moved together. The strongest correlations are between the market benchmark (SPY) and Technology (XLK), at 0.925, and between SPY and Consumer Discretionary (XLY) at 0.908. This high correlation means that Consumer Discretionary and Technology moved nearly identically to the market benchmark. This is likely because XLK and XLY make up 35% and 10%, respectively, of the SPY sector allocation. By contrast, Energy (XLE) and Utilities (XLU) recorded the lowest correlation at 0.407, suggesting that they behaved more differently from one another than any other pair of sectors in the sample. Energy and Utilities tend to show weaker correlations with the rest of the market, which gives some opportunity for diversification. However, because all correlations remained positive and many were still relatively high, the evidence suggests that sector diversification reduced risk only to a limited extent rather than creating fully independent return patterns.
+The Heatmap shows that all sectors were positively correlated with each other, meaning the sector ETFs moved together. The strongest correlations are between the market benchmark (SPY) and Technology (XLK), at 0.925, and between SPY and Consumer Discretionary (XLY) at 0.908. This high correlation means that Consumer Discretionary and Technology moved nearly identically to the market benchmark. This is likely because XLK and XLY make up 35% and 10%, respectively, of the SPY sector allocation. By contrast, Energy (XLE) and Utilities (XLU) recorded the lowest correlation at 0.407, suggesting that they behaved more differently from one another than any other pair of sectors in the sample. Energy and Utilities tend to show weaker correlations with the rest of the market, which gives some opportunity for diversification. However, because all correlations remained positive and many were still relatively high, the evidence suggests that sector diversification reduced risk only to a limited extent rather than creating fully independent return patterns.
 
 Correlation tells us how closely sectors moved together, but it does not show how strongly each one responded to broader market swings, which is why the next section focuses on market beta.
 
 ### Market beta and market exposure
 
-Market beta measures how sensitive a sector’s returns are to movements in the broader market. A beta above 1 suggests that a sector tends to move more than the market, while a beta below 1 indicates a less sensitive or more defensive return pattern. 
+Market beta measures how sensitive a sector’s returns are to movements in the broader market. A beta above 1 suggests that a sector tends to move more than the market, while a beta below 1 indicates a less sensitive or more defensive return pattern.
 
 ![Market beta for each U.S. equity sector relative to the Overall Market benchmark.](output/figures/market_beta_chart.png){width="100%"}
 
@@ -120,6 +120,7 @@ The chart confirms several patterns seen above. Technology (XLK) once again stan
 This chart gave us a good visual comparison of the beta values, but it does not show the full regression results, which is why I also present the regression table below.
 
 #### Regression results
+
 ```{python}
 #| echo: false
 import pandas as pd
@@ -149,12 +150,10 @@ styled = (
     })
 )
 styled
-``` 
+```
 
 While we already discussed the meaning of beta across the ETFs, it’s also important to understand the full regression and its values shown in the table above. Put simply, this regression creates a formula that uses SPY's daily return to predict each sector ETF's daily return, which helps show how sensitive each sector was to broader market movements. The estimated relationship can be written as:
-$$
-R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}
-$$
+$$R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}$$
 where $R_{t,i}$ is the daily return of sector ETF $i$ on day $t$, $\alpha_i$ is the intercept, $\beta_i$ is the slope coefficient, $R_{SPY,t}$ is the daily return of SPY on day $t$, and $\varepsilon_{t,i}$ is the error term, it captures the part of the sector’s return that is not explained by the market benchmark.
 
 In this table, Alpha shows the return that is not explained by the market when SPY’s return is zero, Beta shows how strongly the ETF moved relative to the market, $R^2$ shows how much of the ETF’s return variation was explained by SPY, and the p-values test whether the estimated alpha and beta coefficients are statistically significant. The regression also includes an error term, $\varepsilon_{i,t}$. It does not appear in the results table because it is not a single estimated coefficient, but rather a separate residual for each observation in the sample.
@@ -162,7 +161,6 @@ In this table, Alpha shows the return that is not explained by the market when S
 The table gives us 2 more important insights beyond the beta chart. First, all beta coefficients are statistically significant. The beta p-values are extremely small and round to 0.000 in the table, meaning there is strong evidence of a relationship between each sector ETF and the market benchmark SPY. Second, the $R^2$ values differ quite a bit across the sectors. Technology (XLK) and Consumer Discretionary (XLY) have the highest $R^2$ values, at 0.855 and 0.824, which suggests that a large share of their daily return variation was explained by movements in SPY. This is a trend we have seen repeatedly now. Similarly, Utilities (XLU) and Energy (XLE) have much lower $R^2$ values, at 0.346 and 0.463, indicating that their returns were less closely tied to the market and more influenced by sector-specific factors. The alpha estimates are all quite small, and none are statistically significant, since the p-values for alpha remain far higher than normal significance levels. One partial exception is Materials (XLB), where the alpha p-value is 0.081, which may be interpreted as weak evidence at the 10% significance level, but not strong enough to conclude clearly that the sector generated abnormal return beyond market exposure.
 
 The beta chart and regression table reinforce the finding of this blog: U.S. equity sectors did behave differently, not only in their long-run returns and volatility, but also in how closely they were tied to movements in the wider market.
-
 
 ## Conclusion
 
