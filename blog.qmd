@@ -8,7 +8,7 @@ resources:
 
 # Which U.S. Equity Sectors Really Behaved Differently in the Last Decade and a Half?
 
-Word count: 2544 words
+Word count: 2492 words
 
 ## Introduction
 
