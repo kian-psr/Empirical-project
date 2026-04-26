@@ -23,7 +23,9 @@ In this project I will analyse daily adjusted price data for eight major SPDR se
 
 The workflow begins by downloading raw ETF price data from Yahoo Finance. These files are then cleaned and combined, transformed into daily returns, and used to generate tables, figures, and regression outputs. The final product is a Quarto blog post published through GitHub Pages.
 
-The modelling component of the project is a market model regression for each sector ETF against SPY.
+The cleaned datasets contain both a `Ticker` column and a `Sector` column. Ticker symbols are used for data matching, calculations, and regression logic, while sector names are used in the final tables, figures, and blog narrative to make the outputs easier to read.
+
+The modelling component of the project is a market model regression for each sector ETF against the Market Benchmark.
 
 ## Repository structure
 ```text
@@ -206,7 +208,7 @@ The analysis combines descriptive statistics with a simple market model regressi
 
 $R_{t,i} = \alpha_i + \beta_i R_{SPY,t} + \varepsilon_{t,i}$
 
-where $R_{t,i}$ is the daily return of sector ETF $i$, and $R_{SPY,t}$ is the daily return of the benchmark ETF SPY. This allows the project to compare not only performance and volatility, but also each sector’s sensitivity to broader market movements.
+where $R_{t,i}$ is the daily return of sector $i$, and $R_{SPY,t}$ is the daily return of the Overall Market benchmark, represented by SPY. This allows the project to compare not only performance and volatility, but also each sector’s sensitivity to broader market movements.
 
 ### Source of ETFs
 
